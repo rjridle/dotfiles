@@ -13,9 +13,7 @@ set clipboard=unnamedplus
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-map <F6> :Explore<CR>
-
-
+" filetype plugin on
 autocmd FileType verilog setlocal expandtab
 autocmd FileType verilog setlocal tabstop=2
 autocmd FileType verilog setlocal shiftwidth=2
@@ -24,30 +22,36 @@ autocmd FileType systemverilog setlocal tabstop=2
 autocmd FileType systemverilog setlocal shiftwidth=2
 autocmd FileType stata setlocal filetype=tcl
 
-" filetype plugin on
+" Key remapping for useful commands
+map <F6> :Explore<CR>
+nnoremap <C-u> :UndotreeToggle<CR>
+nnoremap <C-o><C-o> :vsplit<CR>
+nnoremap <C-e><C-e> :split<CR>
+nnoremap <C-g><C-g> :b# <bar> :bd#<CR>
+nnoremap <C-f><C-f> :q<CR>
+nnoremap <C-t><C-t> :NERDTreeToggle<CR>
+
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%96v.\+/
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 
 " vim-plug stuff
 call plug#begin()
+    Plug 'preservim/nerdtree'
     Plug 'mbbill/undotree'
     Plug 'nachumk/systemverilog.vim'
 	Plug 'morhetz/gruvbox'
 
-" On-demand loading
-"   Plug 'plugin/here', { 'on': 'NERDTreeToggle' }
 call plug#end()
 
+" Setting up gruvbox
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
 set background=dark
 
 
-nnoremap <SPACE>u :UndotreeToggle<CR>
-nnoremap <C-o><C-o> :vsplit<CR>
-nnoremap <C-e><C-e> :split<CR>
-nnoremap <C-g><C-g> :b# <bar> :bd#<CR>
-nnoremap <C-f><C-f> :q<CR>
-
-
+" Setting up persistent undo to work with undotree
 if has("persistent_undo")
    let target_path = expand('~/.undodir')
 
@@ -61,8 +65,4 @@ if has("persistent_undo")
     set undofile
 endif
 
-" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-" match OverLength /\%96v.\+/
-
-vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
