@@ -17,5 +17,10 @@ in vim.
 3. [systemverilog](https://github.com/nachumk/systemverilog.vim.git): Syntax
 highlighting for system verilog.
 
+## Installation
+1. Copy the .vimrc file to your current .vimrc
+2. Open up anything in vim
+3. Run the command `:PlugInstall`
 
+This should install all the packages and now you're done.
 
