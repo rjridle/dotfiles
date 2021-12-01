@@ -24,12 +24,16 @@ autocmd FileType stata setlocal filetype=tcl
 
 " Key remapping for useful commands
 map <F6> :Explore<CR>
-nnoremap <C-u> :UndotreeToggle<CR>
+nnoremap <C-u><C-t> :UndotreeToggle<CR>
 nnoremap <C-o><C-o> :vsplit<CR>
 nnoremap <C-e><C-e> :split<CR>
 nnoremap <C-g><C-g> :b# <bar> :bd#<CR>
 nnoremap <C-f><C-f> :q<CR>
 nnoremap <C-t><C-t> :NERDTreeToggle<CR>
+nnoremap <C-h><C-i> :res +5<CR>
+nnoremap <C-h><C-d> :res -5<CR>
+nnoremap <C-v><C-i> :vertical resize +5<CR>
+nnoremap <C-v><C-d> :vertical resize -5<CR>
 
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 " match OverLength /\%96v.\+/
@@ -42,7 +46,7 @@ call plug#begin()
     Plug 'mbbill/undotree'
     Plug 'nachumk/systemverilog.vim'
 	Plug 'morhetz/gruvbox'
-
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 call plug#end()
 
 " Setting up gruvbox
