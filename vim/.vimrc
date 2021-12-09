@@ -46,7 +46,6 @@ call plug#begin()
     Plug 'mbbill/undotree'
     Plug 'nachumk/systemverilog.vim'
 	Plug 'morhetz/gruvbox'
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 call plug#end()
 
 " Setting up gruvbox
