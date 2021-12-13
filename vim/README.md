@@ -17,6 +17,8 @@ in vim.
 3. [systemverilog](https://github.com/nachumk/systemverilog.vim.git): Syntax
 highlighting for system verilog.
 
+4. [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe.git): Autocompletion.
+
 ## Installation
 1. Copy the .vimrc file to your current .vimrc
 2. Open up anything in vim
