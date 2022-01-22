@@ -24,7 +24,7 @@ autocmd FileType stata setlocal filetype=tcl
 
 " Key remapping for useful commands
 map <F6> :Explore<CR>
-nnoremap <C-t><C-u> :UndotreeToggle<CR>
+nnoremap <C-u><C-t> :UndotreeToggle<CR>
 nnoremap <C-o><C-o> :vsplit<CR>
 nnoremap <C-e><C-e> :split<CR>
 nnoremap <C-g><C-g> :b# <bar> :bd#<CR>
@@ -46,13 +46,17 @@ call plug#begin()
     Plug 'mbbill/undotree'
     Plug 'nachumk/systemverilog.vim'
 	Plug 'morhetz/gruvbox'
+    Plug 'plasticboy/vim-markdown'
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 call plug#end()
 
 " Setting up gruvbox
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = "hard"
 set background=dark
+let g:gruvbox_contrast_dark="hard"
+colorscheme gruvbox
 
+" Disable folding for vim markdown
+let g:vim_markdown_folding_disabled = 1
 
 " Setting up persistent undo to work with undotree
 if has("persistent_undo")
