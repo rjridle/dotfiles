@@ -3,12 +3,13 @@ if {[lindex $scalefac 1] < 2} {
     scalegrid 1 2
 }
 
+
 # drc off
 drc euclidean on
 
 # loading technology
 
-puts stdout "Sourcing design .magicrc for technology sky130A"
+puts stdout "Sourcing design ~/.magicrc for technology sky130A"
 tech load ~/.magic_tech/sky130A.tech
 
 # set units to lambda grid 
@@ -20,6 +21,10 @@ catch {magic::query_mylib_ip}
 catch {magic::query_my_projects}
 
 
+macro XK_Q "move l 1"
+macro XK_R "move r 1"
+macro XK_W "move d 1"
+macro XK_E "move u 1"
 macro XK_Left "scroll l .1 w"
 macro Shift_XK_Left "scroll l 1 w"
 macro Control_XK_Left "box grow w 1"
