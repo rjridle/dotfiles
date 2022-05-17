@@ -47,7 +47,6 @@ call plug#begin()
     Plug 'nachumk/systemverilog.vim'
 	Plug 'morhetz/gruvbox'
     Plug 'plasticboy/vim-markdown'
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 call plug#end()
 
 " Setting up gruvbox
