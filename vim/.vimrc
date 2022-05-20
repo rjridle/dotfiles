@@ -24,7 +24,7 @@ autocmd FileType stata setlocal filetype=tcl
 
 " Key remapping for useful commands
 map <F6> :Explore<CR>
-nnoremap <C-u><C-t> :UndotreeToggle<CR>
+nnoremap <C-t><C-u> :UndotreeToggle<CR>
 nnoremap <C-o><C-o> :vsplit<CR>
 nnoremap <C-e><C-e> :split<CR>
 nnoremap <C-g><C-g> :b# <bar> :bd#<CR>
