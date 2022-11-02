@@ -1,7 +1,7 @@
 # VIM Configuration
 The .vimrc file is hidden so if you want to view is run `ls -al`
 
-## Repo's to clone
+## Plugins used
 [VIM's plugin manager](https://github.com/junegunn/vim-plug) must fist be
 installed to then install all following plugins. Following are the plugins
 already set up inside the .vimrc:
