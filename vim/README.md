@@ -19,6 +19,8 @@ highlighting for system verilog.
 
 4. [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe.git): Autocompletion.
 
+5. [Asynchronus Lint Engine](https://github.com/dense-analysis/ale.git): Linter for a bunch of different languages.
+
 ## Installation
 1. Copy the .vimrc file to your current .vimrc
 2. Open up anything in vim
