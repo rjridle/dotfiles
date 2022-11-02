@@ -47,6 +47,7 @@ call plug#begin()
     Plug 'nachumk/systemverilog.vim'
 	Plug 'morhetz/gruvbox'
     Plug 'plasticboy/vim-markdown'
+    Plug 'dense-analysis/ale'
 call plug#end()
 
 " Setting up gruvbox
