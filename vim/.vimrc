@@ -10,7 +10,7 @@ set expandtab
 set hlsearch
 set clipboard=unnamedplus
 
-set colorcolumn=80
+set colorcolumn=101
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " filetype plugin on
