@@ -46,8 +46,9 @@ call plug#begin()
     Plug 'mbbill/undotree'
     Plug 'nachumk/systemverilog.vim'
 	Plug 'morhetz/gruvbox'
-    Plug 'plasticboy/vim-markdown'
+    " Plug 'plasticboy/vim-markdown'
     Plug 'dense-analysis/ale'
+    Plug 'JamshedVesuna/vim-markdown-preview'
 call plug#end()
 
 " Setting up gruvbox
@@ -56,7 +57,12 @@ let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 
 " Disable folding for vim markdown
-let g:vim_markdown_folding_disabled = 1
+"let g:vim_markdown_folding_disabled = 1
+
+" Vim Markdown options
+let vim_markdown_preview_toggle=1
+let vim_markdown_preview_browser='Firefox'
+let vim_markdown_preview_use_xdg_open=1
 
 " Setting up persistent undo to work with undotree
 if has("persistent_undo")
