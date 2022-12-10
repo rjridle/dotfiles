@@ -42,13 +42,13 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " vim-plug stuff
 call plug#begin()
-    Plug 'preservim/nerdtree'
-    Plug 'mbbill/undotree'
-    Plug 'nachumk/systemverilog.vim'
-	Plug 'morhetz/gruvbox'
+    Plug 'preservim/nerdtree' "File explorer
+    Plug 'mbbill/undotree' "Persistent undo and undo tree
+    Plug 'nachumk/systemverilog.vim' "systemverilog syntax
+	Plug 'morhetz/gruvbox' "Color scheme
     " Plug 'plasticboy/vim-markdown'
-    Plug 'dense-analysis/ale'
-    Plug 'JamshedVesuna/vim-markdown-preview'
+    Plug 'dense-analysis/ale' "Code linter
+    Plug 'JamshedVesuna/vim-markdown-preview' "Previewer for markdown
 call plug#end()
 
 " Setting up gruvbox
