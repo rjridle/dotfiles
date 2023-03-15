@@ -9,6 +9,7 @@ set cindent
 set expandtab
 set hlsearch
 set clipboard=unnamedplus
+set t_u7=
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
