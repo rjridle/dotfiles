@@ -51,21 +51,11 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " vim-plug stuff
 call plug#begin()
-<<<<<<< HEAD
     Plug 'preservim/nerdtree'
     Plug 'mbbill/undotree'
-    Plug 'nachumk/systemverilog.vim'
+    "Plug 'nachumk/systemverilog.vim'
 	Plug 'morhetz/gruvbox'
     Plug 'dense-analysis/ale'
-=======
-    Plug 'preservim/nerdtree' "File explorer
-    Plug 'mbbill/undotree' "Persistent undo and undo tree
-    Plug 'nachumk/systemverilog.vim' "systemverilog syntax
-	Plug 'morhetz/gruvbox' "Color scheme
-    " Plug 'plasticboy/vim-markdown'
-    Plug 'dense-analysis/ale' "Code linter
-    Plug 'JamshedVesuna/vim-markdown-preview' "Previewer for markdown
->>>>>>> c41e2b8be479a705a9980e490799564b265c5686
 call plug#end()
 
 " Setting up gruvbox
@@ -73,17 +63,6 @@ set background=dark
 let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 
-<<<<<<< HEAD
-=======
-" Disable folding for vim markdown
-"let g:vim_markdown_folding_disabled = 1
-
-" Vim Markdown options
-let vim_markdown_preview_toggle=1
-let vim_markdown_preview_browser='Firefox'
-let vim_markdown_preview_use_xdg_open=1
-
->>>>>>> c41e2b8be479a705a9980e490799564b265c5686
 " Setting up persistent undo to work with undotree
 if has("persistent_undo")
    let target_path = expand('~/.undodir')
@@ -97,6 +76,3 @@ if has("persistent_undo")
     let &undodir=target_path
     set undofile
 endif
-
-
-
