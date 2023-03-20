@@ -5,7 +5,7 @@ GIT_USER=
 GIT_EMAIL=
 
 if [ "$(id -u)" -ne 0 ]; then
-	echo 'Script must be ran with sudo privaleges'
+	echo '[ERROR] Script must be ran with sudo privaleges'
 	exit 1
 fi
 
@@ -16,8 +16,8 @@ apt update && apt upgrade -y
 # Install Git
 apt-get install git -y
 
-# Install Vim
-apt-get install vim -y
+git config --global user.name "${GIT_USER}"
+git config --global user.email "${GIT_EMAIL}"
 
 # Install tcl/tk 
 apt-get install tcl-dev
@@ -35,16 +35,24 @@ apt-get install python3-pip -y
 pip install numpy
 pip install matplotlib
 
+# Install Vim
+apt-get install vim -y
 
 # Get the files for Vim Plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Clone dotfiles repo
+echo "[INFO] Copy template .vimrc to ~/.vimrc"
 cp ${RUN_DIR}/dotfiles/vim/.vimrc ~/.vimrc
 
 # Install Vim plugins
 vim "+:PlugInstall" "+:qall"
+
+echo "[INFO] Copying .magicrc.template to ~/.magicrc"
+cp ${RUN_DIR}/magic/.magicrc.template ~/.magicrc
+
+echo "[INFO] Copying .xschem.template to ~/.xschem/xschemrc"
+cp ${RUN_DIR}/xschem/.xschemrc.template ~/.xschem/xschemrc
 
 echo "[INFO] Installing tool dependencies"
 # ModelSim dependencies
@@ -87,9 +95,22 @@ apt-get install libgoogle-perftools-dev numactl -y
 apt-get install libfl2 -y
 apt-get install libfl-dev -y
 apt-get install zlibc zlib1g zlib1g-dev -y
+apt-get install help2man -y
+
+# GHDL dependencies
+apt-get install gnat -y
+
+# openocd-riscv dependencies
+apt-get install autoconf -y
+apt-get install automake-y
+apt-get install texinfo -y
+apt-get install make -y
+apt-get install libtool -y
+apt-get install pkg-config -y
+apt-get install libftdi1 -y
 
 # MiniPro EEPROM dependencies
-apt install libusb-1.0-0-dev
+apt install libusb-1.0-0-dev -y
 
 echo "[INFO] Dependencies installed for: "
 echo "[INFO]   ModelSim"
@@ -102,7 +123,7 @@ echo "[INFO]   Verilator"
 echo "[INFO]   GHDL"
 echo "[INFO]   riscv-gnu-toolchain"
 
-echo "[INFO] Cloning tools in ${UTIL_DIR}"
+echo "[INFO] Cloning tools repos into ${UTIL_DIR}"
 # Clone OpenRadHardSCL repo
 cd ${UTIL_DIR} && git clone git@github.com:rjridle/OpenRadHardSCL.git
 cd ${UTIL_DIR} && git clone git@github.com:verilator/verilator.git
@@ -113,12 +134,7 @@ cd ${UTIL_DIR} && git clone git@github.com:StefanSchippers/xschem.git
 cd ${UTIL_DIR} && git clone git@github.com:RTimothyEdwards/netgen.git
 cd ${UTIL_DIR} && git clone git@github.com:riscv-collab/riscv-gnu-toolchain.git
 cd ${UTIL_DIR} && git clone git://git.code.sf.net/p/ngspice/ngspice ngspice-ngspice
-
-echo "[INFO] Copying .magicrc.template to ~/.magicrc"
-cp ${RUN_DIR}/magic/.magicrc.template ~/.magicrc
-
-echo "[INFO] Copying .xschem.template to ~/.xschem/xschemrc"
-cp ${RUN_DIR}/xschem/.xschemrc.template ~/.xschem/xschemrc
-echo "[INFO] Ready to install xschem. Refer to OpenRadHardSCL/tools/xschem to install"
+cd ${UTIL_DIR} && git clone git@github.com:olofk/edalize.git
+cd ${UTIL_DIR} && git clone git@github.com:riscv/riscv-openocd.git
 
 echo "[INFO] Done."
