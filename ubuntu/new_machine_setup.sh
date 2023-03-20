@@ -1,10 +1,15 @@
 #!/bin/bash
-
+RUN_DIR=`pwd`
+UTIL_DIR=~/Util
+GIT_USER=
+GIT_EMAIL=
 
 if [ "$(id -u)" -ne 0 ]; then
 	echo 'Script must be ran with sudo privaleges'
 	exit 1
 fi
+
+mkdir -p ${UTIL_DIR}
 
 apt update && apt upgrade -y
 
@@ -30,22 +35,21 @@ apt-get install python3-pip -y
 pip install numpy
 pip install matplotlib
 
-# ModelSim dependencies
-apt-get install libx
 
 # Get the files for Vim Plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Clone dotfiles repo
-cd ~/ && git clone git@github.com:rjridle/dotfiles.git
-cp ~/dotfiles/vim/.vimrc ~/.vimrc
+cp ${RUN_DIR}/dotfiles/vim/.vimrc ~/.vimrc
 
 # Install Vim plugins
 vim "+:PlugInstall" "+:qall"
 
-echo "[INFO] Installing packages needed for tools"
-## Packages needed for tools
+echo "[INFO] Installing tool dependencies"
+# ModelSim dependencies
+apt-get install libx
+
 # Magic dependencies
 apt-get install gcc -y #gcc
 apt-get install csh -y #csh
@@ -91,40 +95,30 @@ echo "[INFO] Dependencies installed for: "
 echo "[INFO]   ModelSim"
 echo "[INFO]   Magic"
 echo "[INFO]   ngspice"
-echo "[INFO]   netgen-lvs"
+echo "[INFO]   netgen"
 echo "[INFO]   Xschem"
 echo "[INFO]   Icarus Verilog"
 echo "[INFO]   Verilator"
 echo "[INFO]   GHDL"
 echo "[INFO]   riscv-gnu-toolchain"
 
-# Install Ngspice 
-echo "[INFO] Installing ngspice from apt"
-apt install ngspice -y
-# Install Netgen
-echo "[INFO] Installing netgen from apt"
-apt install netgen-lvs -y
-
-#echo "[INFO] Cloning OpenRadHardSCL repo to home directory"
+echo "[INFO] Cloning tools in ${UTIL_DIR}"
 # Clone OpenRadHardSCL repo
-#cd ~/ && git clone git@github.com:rjridle/OpenRadHardSCL.git
+cd ${UTIL_DIR} && git clone git@github.com:rjridle/OpenRadHardSCL.git
+cd ${UTIL_DIR} && git clone git@github.com:verilator/verilator.git
+cd ${UTIL_DIR} && git clone git@github.com:ghdl/ghdl.git
+cd ${UTIL_DIR} && git clone git@github.com:steveicarus/iverilog.git
+cd ${UTIL_DIR} && git clone git@github.com:RTimothyEdwards/magic.git
+cd ${UTIL_DIR} && git clone git@github.com:StefanSchippers/xschem.git
+cd ${UTIL_DIR} && git clone git@github.com:RTimothyEdwards/netgen.git
+cd ${UTIL_DIR} && git clone git@github.com:riscv-collab/riscv-gnu-toolchain.git
+cd ${UTIL_DIR} && git clone git://git.code.sf.net/p/ngspice/ngspice ngspice-ngspice
 
-echo "[INFO] Installing EDA tools"
-## Install all EDA tools
-# Install Magic
+echo "[INFO] Copying .magicrc.template to ~/.magicrc"
+cp ${RUN_DIR}/magic/.magicrc.template ~/.magicrc
 
-# Command below only installs Magic 8.2 but we need Magic 8.3,
-# use repo in OpenRadHardSCL/tools/magic to install.
-#apt install magic -y 
-cp ~/OpenRadHardSCL/.magicrc.template ~/.magicrc
-echo "[INFO] Ready to install magic. Refer to OpenRadHardSCL/tools/magic to install"
-
-# Install Xschem
-
-# Command below install wrong version of xschem. Need to install from
-# repo in OpenRadHardSCL/tools/xschem instead.
-cp ~/OpenRadHardSCL/.xschemrc.template ~/.xschem/xschemrc
+echo "[INFO] Copying .xschem.template to ~/.xschem/xschemrc"
+cp ${RUN_DIR}/xschem/.xschemrc.template ~/.xschem/xschemrc
 echo "[INFO] Ready to install xschem. Refer to OpenRadHardSCL/tools/xschem to install"
-
 
 echo "[INFO] Done."
