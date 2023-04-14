@@ -1,5 +1,7 @@
 syntax on
 
+set encoding=utf-8
+set fileencoding=utf-8
 set noerrorbells
 set tabstop=4
 set shiftwidth=4
@@ -9,9 +11,9 @@ set cindent
 set expandtab
 set hlsearch
 set clipboard=unnamedplus
-set t_u7=
+set number
 
-set colorcolumn=80
+set colorcolumn=114
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " filetype plugin on
@@ -46,23 +48,22 @@ nmap <C-f><C-f> <Plug>Kwbd
 " in multiple windows
 let bclose_multiple = 0
 
-" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-" match OverLength /\%96v.\+/
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
-
+"
 " vim-plug stuff
 call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'mbbill/undotree'
-    "Plug 'nachumk/systemverilog.vim'
-	Plug 'morhetz/gruvbox'
     Plug 'dense-analysis/ale'
+	Plug 'morhetz/gruvbox'
+    Plug 'chrisbra/unicode.vim'
 call plug#end()
 
-" Setting up gruvbox
-set background=dark
-let g:gruvbox_contrast_dark="hard"
-colorscheme gruvbox
+" Jump to last position when reopening a file
+if has("autocmd")
+   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+     \| exe "normal! g'\"" | endif
+endif
 
 " Setting up persistent undo to work with undotree
 if has("persistent_undo")
@@ -77,3 +78,19 @@ if has("persistent_undo")
     let &undodir=target_path
     set undofile
 endif
+
+" ALE linter for SystemVerilog
+au FileType systemverilog
+\ let g:ale_linters = {'systemverilog' : ['verilator'],}
+let g:ale_verilog_verilator_options='-sv --default-language "1800-2017"'
+
+" ALE linter for VHDL
+au FileType vhdl
+\ let g:ale_linters = {'vhdl' : ['ghdl'],}
+let g:ale_vhdl_ghdl_options='--std=08'
+
+" Setting up gruvbox
+set background=dark
+let g:gruvbox_contrast_dark="hard"
+colorscheme gruvbox
+"
