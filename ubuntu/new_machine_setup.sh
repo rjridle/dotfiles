@@ -102,7 +102,7 @@ apt-get install gnat -y
 
 # openocd-riscv dependencies
 apt-get install autoconf -y
-apt-get install automake-y
+apt-get install automake -y
 apt-get install texinfo -y
 apt-get install make -y
 apt-get install libtool -y
