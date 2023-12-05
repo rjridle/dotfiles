@@ -1,0 +1,13 @@
+[user]
+    email = ryan.j.ridley@nasa.gov
+    name = rjridle
+[core]
+    editor = vim
+[merge]
+    conflictStyle = diff3
+[magit]
+    hideCampaign = true
+[alias]
+    tree = log --graph --decorate -- pretty=oneline --abbrev-commit --all
+[init]
+    defaultBranch = main

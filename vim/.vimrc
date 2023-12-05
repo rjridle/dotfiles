@@ -17,8 +17,6 @@ set ignorecase          " ignore case in search patterns
 set smartcase           " overrides ignorecase iif search pattern contains upper case chars
 set modeline            " gives # of lines that is checked for set commands
 set cinoptions=11       " affects way 'ciindent' reindents lines in a C program
-set encoding=utf-8
-set fileencoding=utf-8
 set clipboard=unnamedplus " allows text yanked in visual mode to be pasted in other files
 
 
