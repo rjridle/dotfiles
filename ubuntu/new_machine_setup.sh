@@ -19,21 +19,24 @@ apt-get install git -y
 git config --global user.name "${GIT_USER}"
 git config --global user.email "${GIT_EMAIL}"
 
-# Install tcl/tk 
-apt-get install tcl-dev
-apt-get install tk-dev
-apt-get install python-tk
-apt-get install python3-tk
-
 # Install python3
 apt-get install python3 -y
 
 # Install pip3
 apt-get install python3-pip -y
 
+# Install tcl/tk 
+apt-get install tcl-dev
+apt-get install tk-dev
+apt-get install python-tk
+apt-get install python3-tk
+
+# Install cURL
+apt-get install curl -y 
+
 # Install python packages
-pip install numpy
-pip install matplotlib
+python3 -m pip install numpy
+python3 -m pip install matplotlib
 
 # Install Vim
 apt-get install vim -y
@@ -56,7 +59,7 @@ cp ${RUN_DIR}/xschem/.xschemrc.template ~/.xschem/xschemrc
 
 echo "[INFO] Installing tool dependencies"
 # ModelSim dependencies
-apt-get install libx
+apt-get install libx -y
 
 # Magic dependencies
 apt-get install gcc -y #gcc
@@ -79,8 +82,6 @@ apt-get install build-essential -y # Gaw waveform viewer
 apt-get install autoconf -y
 apt-get install automake -y 
 apt-get install autotools-dev -y 
-apt-get install curl -y 
-apt-get install python3 -y 
 apt-get install libmpc-dev -y 
 apt-get install libmpfr-dev -y 
 apt-get install libgmp-dev -y 
@@ -88,23 +89,26 @@ apt-get install patchutils -y
 apt-get install bc -y 
 apt-get install zlib1g-dev -y 
 apt-get install libexpat-dev -y
+apt-get install libncurses5-dev -y
 
 # Verilator dependencies
-apt-get install git perl python3 make autoconf g++ flex bison ccache -y
-apt-get install libgoogle-perftools-dev numactl -y
+apt-get install git 
+apt-get install perl -y
+apt-get install make -y
+apt-get install g++ -y
+apt-get install ccache -y
+apt-get install libgoogle-perftools-dev -y
+apt-get install numactl -y
 apt-get install libfl2 -y
 apt-get install libfl-dev -y
-apt-get install zlibc zlib1g zlib1g-dev -y
+apt-get install zlibc zlib1g -y
 apt-get install help2man -y
 
 # GHDL dependencies
 apt-get install gnat -y
 
 # openocd-riscv dependencies
-apt-get install autoconf -y
-apt-get install automake -y
 apt-get install texinfo -y
-apt-get install make -y
 apt-get install libtool -y
 apt-get install pkg-config -y
 apt-get install libftdi1 -y
@@ -125,16 +129,16 @@ echo "[INFO]   riscv-gnu-toolchain"
 
 echo "[INFO] Cloning tools repos into ${UTIL_DIR}"
 # Clone OpenRadHardSCL repo
-cd ${UTIL_DIR} && git clone git@github.com:rjridle/OpenRadHardSCL.git
-cd ${UTIL_DIR} && git clone git@github.com:verilator/verilator.git
-cd ${UTIL_DIR} && git clone git@github.com:ghdl/ghdl.git
-cd ${UTIL_DIR} && git clone git@github.com:steveicarus/iverilog.git
-cd ${UTIL_DIR} && git clone git@github.com:RTimothyEdwards/magic.git
-cd ${UTIL_DIR} && git clone git@github.com:StefanSchippers/xschem.git
-cd ${UTIL_DIR} && git clone git@github.com:RTimothyEdwards/netgen.git
-cd ${UTIL_DIR} && git clone git@github.com:riscv-collab/riscv-gnu-toolchain.git
-cd ${UTIL_DIR} && git clone git://git.code.sf.net/p/ngspice/ngspice ngspice-ngspice
-cd ${UTIL_DIR} && git clone git@github.com:olofk/edalize.git
-cd ${UTIL_DIR} && git clone git@github.com:riscv/riscv-openocd.git
+#cd ${UTIL_DIR} && git clone git@github.com:rjridle/OpenRadHardSCL.git
+#cd ${UTIL_DIR} && git clone git@github.com:verilator/verilator.git
+#cd ${UTIL_DIR} && git clone git@github.com:ghdl/ghdl.git
+#cd ${UTIL_DIR} && git clone git@github.com:steveicarus/iverilog.git
+#cd ${UTIL_DIR} && git clone git@github.com:RTimothyEdwards/magic.git
+#cd ${UTIL_DIR} && git clone git@github.com:StefanSchippers/xschem.git
+#cd ${UTIL_DIR} && git clone git@github.com:RTimothyEdwards/netgen.git
+#cd ${UTIL_DIR} && git clone git@github.com:riscv-collab/riscv-gnu-toolchain.git
+#cd ${UTIL_DIR} && git clone git://git.code.sf.net/p/ngspice/ngspice ngspice-ngspice
+#cd ${UTIL_DIR} && git clone git@github.com:olofk/edalize.git
+#cd ${UTIL_DIR} && git clone git@github.com:riscv/riscv-openocd.git
 
 echo "[INFO] Done."

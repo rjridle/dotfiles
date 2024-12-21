@@ -1,0 +1,17 @@
+# Settings affect all programs that use the GNU readline Library
+
+# Included to avoid issues when searching history
+$include /etc/inputrc
+
+# Enable VI keybinds
+set editing-mode vi
+
+# Disable annoying bell sounds
+set bell-style none
+
+# Shows current mode in prompt
+set show-mode-in-prompt on 
+
+set vi-ins-mode-string
+
+
