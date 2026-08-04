@@ -1,0 +1,130 @@
+(footprint "MLC1250"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Shielded Power Inductors MLC12xx")
+	(tags "MLC1250")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "9d2ebcf5-a804-4c00-9a10-810e8968070a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "MLC1250"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "f481243b-8361-472d-9679-c666edf33be0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.coilcraft.com/getmedia/052845f0-6909-42f5-b57d-543d9924763c/mlc.pdf"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d5f77c76-f754-4c2d-8941-bda097f1f9f4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Shielded Power Inductors MLC12xx"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "19edc9e4-d668-488f-b2c0-52d5f46b03d2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "Coilcraft"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "c5427c3e-b357-47e1-8bfc-9f7dd7be7cc2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Man. Part Num" "MLC1250-XXXML"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "d206960a-1115-4abb-8ba8-e603943d8165")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(attr smd)
+	(fp_rect
+		(start -5.25 -5.6)
+		(end 5.25 5.6)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "bf03b983-f0af-4aa9-95aa-9a983dd31ce2")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "62e21890-fc53-496d-9023-c69e9addb1cd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at 0 -4)
+		(size 2.7 4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "97f742d6-e11a-4366-8a68-8e3d7177c1b3")
+	)
+	(pad "2" smd rect
+		(at 0 4)
+		(size 2.7 4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "67daa988-4db4-4699-a727-756e89ae4a99")
+	)
+	(embedded_fonts no)
+	(model "${GRAMS}/Ki-CAD8_Library_Files/CoilCraft/MLC1250/Coilcraft-MLC1250.STEP"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -0)
+		)
+	)
+)

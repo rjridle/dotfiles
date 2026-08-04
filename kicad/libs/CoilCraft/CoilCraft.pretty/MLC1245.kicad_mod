@@ -1,0 +1,373 @@
+(footprint "MLC1245"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "MLC1245")
+	(property "Reference" "REF**"
+		(at 0 -6 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "4c330199-5f15-4554-a2e6-dc0a6e5d5562")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "MLC1245"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "405de125-0ce2-4883-b5ad-f1b14b7940ed")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.coilcraft.com/getmedia/052845f0-6909-42f5-b57d-543d9924763c/mlc.pdf"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a5940704-3d9b-4fdd-9bcd-de5e6d560713")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Power Inductors - SMD 1.5uH Shld 20% 14.2A 4.49mOhm AECQ2"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7cab2e6b-a0ee-4f99-b9d5-55d025b8ac01")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "Coilcraft"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "95cc15b7-db58-4767-b1ec-be3777521757")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Man. Part Num" "MLC1245-XXXMLC"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "72b88ad7-f1c0-4977-a073-fc37cef64437")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Vendor" ""
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "920cfb46-9da8-4324-83b4-882517bcc093")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Vendor Part Num" ""
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "aa881aa9-681d-41e8-aad8-e31cdfb63d88")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "DC Current" ""
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "f87d919e-9edc-444d-ba83-24424611a69b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "DC Resistance" ""
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "ed2fce4d-cd85-419d-85e4-717d120cad49")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Type" "SMD"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "b69e79bb-900d-4533-b819-7fb2c38d93d1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -5.6 -5.25)
+		(end -5.6 -1.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "dede09d6-28ba-4898-95c4-066763f56ed2")
+	)
+	(fp_line
+		(start -5.6 5.25)
+		(end -5.6 1.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "007809f5-47df-425a-ba81-0deae8e2f508")
+	)
+	(fp_line
+		(start 5.6 -5.25)
+		(end -5.6 -5.25)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "ce01a3f5-3d0e-499b-a81b-77c46411f6ed")
+	)
+	(fp_line
+		(start 5.6 -1.5)
+		(end 5.6 -5.35)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "c034986e-9a0a-4402-9d92-eff02aa1eda1")
+	)
+	(fp_line
+		(start 5.6 1.5)
+		(end 5.6 5.25)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "a83b79d6-d43d-4340-8f14-5f42b370069d")
+	)
+	(fp_line
+		(start 5.6 5.25)
+		(end -5.6 5.25)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "6df7084a-f037-45b4-ae1f-a2330a310c25")
+	)
+	(fp_circle
+		(center -7 0)
+		(end -6.9 0.1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "f07e98c4-7feb-423c-8c34-a7160704aa5b")
+	)
+	(fp_line
+		(start -6.1 -1.5)
+		(end -6.1 1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "e9f42a42-c0b0-4d8b-b96d-1e88e2f6409a")
+	)
+	(fp_line
+		(start -6.1 1.5)
+		(end -5.7 1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "5f304f3b-f820-4999-84bf-f3c49cd03e82")
+	)
+	(fp_line
+		(start -5.7 -5.4)
+		(end -5.7 -1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "e6f2384b-56bf-4737-bbd4-0455036c4f7e")
+	)
+	(fp_line
+		(start -5.7 -1.5)
+		(end -6.1 -1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "21f25194-57b8-404b-8be1-faf3381b656a")
+	)
+	(fp_line
+		(start -5.7 1.5)
+		(end -5.7 5.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "7eb024ee-4643-4ab3-a472-3032d31d825b")
+	)
+	(fp_line
+		(start 5.7 -5.4)
+		(end -5.7 -5.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "45852dcf-b73b-4b08-aff9-dfc6333f13ea")
+	)
+	(fp_line
+		(start 5.7 -1.5)
+		(end 5.7 -5.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "d678ec2a-ba40-4b15-b3b5-396d3f47d0e4")
+	)
+	(fp_line
+		(start 5.7 1.5)
+		(end 6.1 1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "7db0bf10-c430-437a-b158-796f754e7bcd")
+	)
+	(fp_line
+		(start 5.7 5.4)
+		(end -5.7 5.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "20c13ac2-2f5d-460e-9125-04e29adfd024")
+	)
+	(fp_line
+		(start 5.7 5.4)
+		(end 5.7 1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "a67fd679-eb55-4dc7-a4fb-7bae5f828007")
+	)
+	(fp_line
+		(start 6.1 -1.5)
+		(end 5.7 -1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "b9f059ba-2820-4817-8bd9-59e6b6e85f4f")
+	)
+	(fp_line
+		(start 6.1 1.5)
+		(end 6.1 -1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "482809a7-3929-4479-8f82-ff0aacac7cea")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "95f34ede-d02b-4358-95dd-d296e01d0b33")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -4 0 270)
+		(size 2.7 4)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.01)
+		(thermal_bridge_angle 45)
+		(uuid "4e16669d-c41a-492a-a387-f48742e5fb0c")
+	)
+	(pad "2" smd roundrect
+		(at 4 0 270)
+		(size 2.7 4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.01)
+		(thermal_bridge_angle 45)
+		(uuid "75e43a39-7612-4ed4-adad-a22af841d7dc")
+	)
+	(embedded_fonts no)
+	(model "${GRAMS}/Ki-CAD8_Library_Files/CoilCraft/MLC1245/Coilcraft-MLC1245.STEP"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -90)
+		)
+	)
+)

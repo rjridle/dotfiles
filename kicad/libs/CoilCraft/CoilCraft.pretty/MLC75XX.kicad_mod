@@ -1,0 +1,281 @@
+(footprint "MLC75XX"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "MLC75XX Series - Shielded Power Inductor")
+	(tags "Coilcraft MLC75 inductor coil")
+	(property "Reference" "REF**"
+		(at 0 -5.4 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "e9229e7c-6ee7-40ce-b944-808eacd2e64f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "MLC75XX"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "12548a75-b47a-4dff-9956-8c35354f1716")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.coilcraft.com/getmedia/08a7f2b0-e792-46ca-b029-cc31a7057165/mlc75xx.pdf"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e8448505-737f-4bf9-a9d6-67ca2e4c0782")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Shielded Power Inductors – MLC75xx"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7f8fd56b-98dd-47a3-926d-65aced6fc049")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_rect
+		(start -3.5 -3.5)
+		(end 3.5 3.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "9c7c390b-dfbd-4967-a487-12fb7e6d2498")
+	)
+	(fp_line
+		(start -3.6 -3.6)
+		(end -1.1 -3.6)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "095cc6ae-4007-4e96-a346-4bab242d33d5")
+	)
+	(fp_line
+		(start -3.6 3.6)
+		(end -3.6 -3.6)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "8a31cec5-eee0-4b46-a0a6-65e6e8f4a237")
+	)
+	(fp_line
+		(start -1.1 -4.3)
+		(end 1.1 -4.3)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "713559e6-f94f-4744-a034-eb24315fb3e2")
+	)
+	(fp_line
+		(start -1.1 -3.6)
+		(end -1.1 -4.3)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "db69a673-d559-43e7-81c7-ec76d8bf0922")
+	)
+	(fp_line
+		(start -1.1 3.6)
+		(end -3.6 3.6)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "36fccad3-651f-4ce2-aeb9-13ce57ebaeba")
+	)
+	(fp_line
+		(start -1.1 4.3)
+		(end -1.1 3.6)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "4142e8a3-ecf9-41ea-8fff-4cab9fbfdfe0")
+	)
+	(fp_line
+		(start 1.1 -4.3)
+		(end 1.1 -3.6)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "6b0744b9-76b0-42fe-9a19-0b3693943bf1")
+	)
+	(fp_line
+		(start 1.1 -3.6)
+		(end 3.6 -3.6)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "a223021c-346a-46cd-81a9-a575012ec94c")
+	)
+	(fp_line
+		(start 1.1 3.6)
+		(end 1.1 4.3)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "24293b69-ad57-44ed-a196-b3af07fd8765")
+	)
+	(fp_line
+		(start 1.1 4.3)
+		(end -1.1 4.3)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "0bc7d033-cfe7-4151-a096-59b3646d65c9")
+	)
+	(fp_line
+		(start 3.6 -3.6)
+		(end 3.6 3.6)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "f2042f22-1b2c-45a5-ab8d-3331c7d21523")
+	)
+	(fp_line
+		(start 3.6 3.6)
+		(end 1.1 3.6)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "af0b4d1c-2d2c-442f-8b26-22235d345847")
+	)
+	(fp_line
+		(start -3.5 -3.5)
+		(end 3.5 -3.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "65748f03-e8e5-4072-85d9-85c67d3840a5")
+	)
+	(fp_line
+		(start -3.5 3.5)
+		(end -3.5 -3.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "67defbba-6032-437d-9e46-078cdc051e8a")
+	)
+	(fp_line
+		(start 3.5 -3.5)
+		(end 3.5 3.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "7e0c19dd-47c6-4fbe-b40c-02c1daa18aaf")
+	)
+	(fp_line
+		(start 3.5 3.5)
+		(end -3.5 3.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "fa2279c3-d72b-45c0-a076-281f2756e056")
+	)
+	(fp_circle
+		(center 0 4.7)
+		(end 0.1 4.8)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "2dc50529-30b2-4b35-88ea-d55d6a3e5ce5")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "14c4883e-7534-4764-8cca-ac537950d9f9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at 0 2.75)
+		(size 2 3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.01)
+		(thermal_bridge_angle 45)
+		(uuid "ecc4177f-dcc7-410e-9957-eae15b10a225")
+	)
+	(pad "2" smd roundrect
+		(at 0 -2.75)
+		(size 2 3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.01)
+		(thermal_bridge_angle 45)
+		(uuid "1d93c99f-9436-45e1-a14c-91d39b3b57d8")
+	)
+	(embedded_fonts no)
+	(model "$(GRAMS)/Ki-CAD6_Library_Files/Parts/CoilCraft/MLC7542/3D Models/Coilcraft-MLC7542.STEP"
+		(offset
+			(xyz 0 1.2 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 0 90)
+		)
+	)
+)

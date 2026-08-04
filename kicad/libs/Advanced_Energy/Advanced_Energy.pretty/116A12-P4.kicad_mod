@@ -1,0 +1,311 @@
+(footprint "116A12-P4"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "DC/DC Converters - Through Hole A-Series DC to HVDC Converter, Single output (Unipolar), +12V Input, , +62V DC HVout, 4W, Thru-hole mount, Regulated, Standard Interface")
+	(tags "Adva")
+	(property "Reference" "REF**"
+		(at -9 -4 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "73d8bd0e-7f34-4076-bf1d-956260c1d88c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "1-16A12-P4"
+		(at 41.656 -8.128 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "50f13e86-e8a0-44e5-bb97-739325dbb458")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.mouser.com/datasheet/3/6011/1/en_hv_ultravolt_a_series_data_sheet.pdf"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5bd7bfa5-445b-4c34-8304-2736b38d14b1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "DC/DC Converters - Through Hole A-Series DC to HVDC Converter, Single output (Unipolar), +12V Input, , +62V DC HVout, 4W, Thru-hole mount, Regulated, Standard Interface"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "062813e1-9bfe-44cc-8d05-9582bcfe3005")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "Advanced Energy / Ultravolt"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "09de1be0-f47d-49f1-8f86-81fc03a20034")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Man. Part Num" "1/16A12-P4"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "07b9ac1a-64c1-491d-be8f-67c5bdaf2131")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Vendor" "Mouser"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "06c20660-e637-480d-a60f-372b4662b7e0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Vender Part Num" "324-1/16A12P4"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "40e3e5ac-6117-49a2-b2a3-6c29506c65b6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Vendor URL" "https://www.mouser.com/ProductDetail/Advanced-Energy-Ultravolt/1-16A12-P4?qs=BZBei1rCqCCR%252Bqu7fS%252Bt0A%3D%3D"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c0508b94-d1a7-4935-951f-2ab0f4745e87")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Input Voltage" "16V (max), 12V (nom), 11V (min)"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "71ce2d3b-77d6-4382-b583-e90fd382ee40")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Isolation" "Non-Isolated"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0d343c14-264c-49e2-9b9b-d1e6b286138d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mounting Type" " Through Hole"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d767d590-c7c0-4e4a-b1ec-d7381e5f7895")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Output Current" "64 mA"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "d4670994-37a1-4f26-ae57-a21442ebc7b9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Output Voltage" "0V - 62V"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "668a01dd-d83a-4aa2-9dfc-edaeefe51160")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Output Power" "4W"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "7c0e75f3-ac8d-4e49-a46a-f7ad664f6370")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -3.696 -4.602)
+		(end 91.836 35.12)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "7ccbc52b-9e00-48bd-b28c-07ea0578c073")
+	)
+	(fp_rect
+		(start -3.81 -4.699)
+		(end 91.948 35.2044)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "5ae2206f-ed91-4be4-83dc-1d1b7ac0d46e")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 42 -11.176 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "1be19c40-a5e5-49e6-81d9-827e415973d1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at 0 30.48)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "62ff7415-beec-4e95-820d-3b68d1cec7fb")
+	)
+	(pad "2" thru_hole circle
+		(at 0 25.4)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "9edb9d00-fa01-41eb-9206-f7cb3b167ed4")
+	)
+	(pad "3" thru_hole circle
+		(at 0 20.32)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "63ce0ba5-ccd4-41ef-8454-20f06cbde4b8")
+	)
+	(pad "4" thru_hole circle
+		(at 0 15.24)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "969831b0-3e4d-459e-8da1-0cf472e8b0e3")
+	)
+	(pad "5" thru_hole circle
+		(at 0 10.16)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6f8f86d5-bcf8-4b01-a25f-463ae8eeb8d3")
+	)
+	(pad "6" thru_hole circle
+		(at 0 5.08)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "10fcb191-606b-4d5e-b608-83c8fcde6a99")
+	)
+	(pad "7" thru_hole circle
+		(at 0 0)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "9150ed0c-9dfd-4f80-80b2-9badc14e75c1")
+	)
+	(pad "8" thru_hole circle
+		(at 81.3 0)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "a670130f-c4b3-434c-800b-430a69d605ae")
+	)
+	(pad "9" thru_hole circle
+		(at 81.3 2.5)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "64ccddd3-bd31-446b-81f7-2d0fa3e57996")
+	)
+	(pad "10" thru_hole circle
+		(at 81.3 21.3)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "4cb9d54a-8567-48ba-806b-f6a0edfa7dc6")
+	)
+	(pad "11" thru_hole circle
+		(at 81.3 23.8)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "d28fddb4-4b01-4657-b5c2-42181b9fbb03")
+	)
+	(embedded_fonts no)
+)

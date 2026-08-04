@@ -1,0 +1,607 @@
+********************************************************************************
+* Software License Agreement                                                   *
+*                                                                              *
+* The software supplied herewith by Innovative Ideas and Designs               *
+* (the "Company") is intended and supplied to you, the Company's customer, for *                                                           
+* use solely and exclusively on the Company's products.                        *
+*                                                                              *
+* The software is owned by the Company and/or its supplier, and is protected   *
+* under applicable copyright laws. All rights are reserved. Any use in         *
+* violation of the foregoing restrictions may subject the user to criminal     *
+* sanctions under applicable laws, as well as to civil liability for the       *
+* breach of the terms and conditions of this license.                          *
+*                                                                              *
+* THIS SOFTWARE IS PROVIDED IN AN "AS IS" CONDITION. NO WARRANTIES, WHETHER    *
+* EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED        *
+* WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO  *
+* THIS SOFTWARE. THE COMPANY SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR    *
+* SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.     *
+********************************************************************************
+*
+*
+* PSPICE Models for Innovative Ideas and Designs:
+*
+* Revision History:
+*   REV 0.01: RAW 07/29/07, www.i2designs.com 
+*          - Start
+*
+*   REV 0.02: RAW 08/10/07, www.i2designs.com 
+*	   - Added XOR,XNOR,TRFF_RDOM,ANALOG_MUX
+*  
+*   REV 0.03: RAW 09/10/07, www.i2designs.com 
+*	   - Added OSC,DRIVER
+*
+*   REV 0.04: RAW 10/08/07, www.i2designs.com 
+*	   - Added OSC_1,PWM_SW,DIDEAL
+*	   - Changed Roff=1E9 for for 1 shots
+*
+*   REV 0.05: RAW 11/19/07, www.i2designs.com 
+*	   - Modified RSFF_RDOM,RSFF_RDOM2,COMP_HYS
+*	   - Added RSFF_RDOM3
+*   REV 0.06: RAW 11/23/07, www.i2designs.com 
+*	   - Added DELAY
+*
+*   REV 0.07: RAW 11/29/07, www.i2designs.com 
+*	   - Fixed up Driver
+*
+*   REV 0.08: RAW 12/17/07, www.i2designs.com 
+*	   - Added LDCR and CESR
+*	   - Renamed COMP to COMPARATOR
+*	   - Renamed INV to INVERTER
+*	   - Added 1mV,1A 1V,1nA DCLAMP
+*	   - Added DLATCH
+*	   - Improved OSC
+*
+*   REV 0.09: RAW 03/19/08, www.i2designs.com 
+*	   - Added RSFF_DROM_VAR and OSC_DUAL
+*
+*   REV 0.1: RAW 04/20/08, www.i2designs.com 
+*	   - ANALOG_BUFFER,COMP_HYS2,GTABLEL
+*
+*   REV 0.11: RAW 06/23/08, www.i2designs.com 
+*	   - XFOR_1P1S,XFOR_CS,OPTO
+*
+*   REV 0.12: RAW 08/3/08, www.i2designs.com
+*	   - Modified COMP_HYS,COMP_HYS2
+*          - Added COMP_HYS2_1,CPMARATOR,GEN_DIODE,DCLAMP
+*          - Remoded DIDEAL
+*
+*   REV 0.13: RAW 10/8/08, www.i2designs.com
+*          - Added ILIMIT
+*
+*   REV 0.14: RAW 2/20/09, www.i2designs.com
+*          - Added DRIVEFET
+*
+*   REV 0.15: RAW 3/4/09, www.i2designs.com
+*          - Added DRIVEFET2
+*
+*   REV 0.16: RAW 6/10/09, www.i2designs.com
+*          - Added DRIVEFET3
+*
+*   REV 0.17: RAW 9/4/09, www.i2designs.com
+*          - Added PROPDELAY
+*
+*   REV 0.18: RAW 9/29/09, www.i2designs.com
+*          - Added LOAD
+*	   - Deleted DC_1mV_1mA_1V_1nA
+*          - Added COMPARATOR2_1
+*	   - Set tt=0 and CJ0=0 for Drivefets
+*	   - ANALOG_MULTI
+*	   - ANALOG_DIVIDER
+*	   - ANALOG_SUMMER
+*	   - ANALOG_DIFF
+*	   - GEN_ZENER
+*
+*   REV 0.19: RAW 10/4/10, www.i2designs.com
+*          - Added XFOR_1P2S
+*          - Added XFOR_GATE_1P2S
+*
+*
+* Recommendations:
+*   Use has been tested on ORCAD 10.0.  Other simulators may require translation.
+*
+********************************************************************************
+* Logic Gates - 0 to 1V, 0.5V Threshold, Uses ABM                              *
+*                                                                              *
+* Notation as follows:                                                         *
+*   GATEX_Y                                                                    *
+*   X=Number of inputs. X="" for 2                                             *
+*   Y=Number of inverting inputs. Y is always less than X                      *
+********************************************************************************
+*$
+.SUBCKT AND A B OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 & V(B)>0.5,1,0) }
+.ends AND
+*$
+.SUBCKT AND3 A B C OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 & V(B)>0.5 & V(C)>0.5,1,0) }
+.ends AND3
+*$
+.SUBCKT AND4 A B C D OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 & V(B)>0.5 & V(C)>0.5 & V(D)>0.5,1,0) }
+.ends AND4
+*$
+.SUBCKT AND_1 A B OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 & V(B)<0.5,1,0) }
+.ends AND_1
+*$
+.SUBCKT BUFFER IN OUT  
+EOUT OUT 0 VALUE { IF( V(IN)>0.5,1,0) }
+.ends BUFFER
+*$
+.SUBCKT DELAY IN OUT
++ PARAMs:  T=100
+S_S1         MEAS 0 RESET2 0 S1
+E_ABM1         CH 0 VALUE { if( V(IN)>0.5,1,0)    }
+E_ABM3         OUT 0 VALUE { if( V(MEAS)>0.5 & V(CH)>0.5,1,0)    }
+R_R1         MEAS CH  {T} 
+C_C1         0 MEAS  1.4427n  
+E_ABM2         RESET 0 VALUE { if(V(CH)<0.5,1,0)    }
+R_R2         RESET2 RESET  0.1  
+C_C2         0 RESET2  1.4427n  
+.MODEL         S1 VSWITCH Roff=1e9 Ron=1.0 Voff=0.25V Von=0.75V
+.ENDS DELAY
+*$
+.SUBCKT DLATCH D CLK Q
+EABM1  1 0 VALUE { If( (V(D)>0.5 & V(CLK)>0.5) | V(Q)>0.5, 1,0)    }
+EABM2  Q  0 VALUE { If( V(2)>0.5 & (V(CLK)<0.5 | V(D)>0.5) , 1,0)    }
+R1   1 2 1
+C1   2  0 5n
+.ENDS DLATCH
+*$
+.SUBCKT INVERTER IN OUT  
+EOUT OUT 0 VALUE { IF( V(IN)<0.5,1,0) }
+.ends INVERTER
+*$
+.SUBCKT NAND A B OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 & V(B)>0.5,0,1) }
+.ends NAND
+*$
+.SUBCKT NAND3 A B C OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 & V(B)>0.5 & V(C)>0.5,0,1) }
+.ends NAND3
+*$
+.SUBCKT NAND4 A B C D OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 & V(B)>0.5 & V(C)>0.5 & V(D)>0.5,0,1) }
+.ends NAND4
+*$
+.SUBCKT NOR A B OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 | V(B)>0.5,0,1) }
+.ends NOR
+*$
+.SUBCKT NOR3 A B C OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 | V(B)>0.5 | V(C)>0.5,0,1) }
+.ends NOR3
+*$
+.SUBCKT NOR4 A B C D OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 | V(B)>0.5 | V(C)>0.5 | V(D)>0.5,0,1) }
+.ends NOR4
+*$
+.SUBCKT ONE_SHOT IN OUT
++ PARAMs:  T=100
+S_S1         MEAS 0 RESET2 0 S1
+E_ABM1         CH 0 VALUE { if( V(IN)>0.5 | V(OUT)>0.5,1,0)    }
+R_R2         RESET2 RESET  0.1  
+E_ABM3         OUT 0 VALUE { if( V(MEAS)<0.5 & V(CH)>0.5,1,0)    }
+R_R1         MEAS CH  {T} 
+C_C2         0 RESET2  1.4427n  
+C_C1         0 MEAS  1.4427n  
+E_ABM2         RESET 0 VALUE { if(V(CH)<0.5,1,0)    }
+.MODEL         S1 VSWITCH Roff=1e9 Ron=1.0 Voff=0.25V Von=0.75V
+.ENDS ONE_SHOT
+*$
+.SUBCKT ONE_SHOT_1 IN OUT
++ PARAMs:  T=100
+S_S1         MEAS 0 RESET2 0 S1
+E_ABM1         CH 0 VALUE { if( V(IN)<0.5 | V(OUT)>0.5,1,0)    }
+R_R2         RESET2 RESET  0.1  
+E_ABM3         OUT 0 VALUE { if( V(MEAS)<0.5 & V(CH)>0.5,1,0)    }
+R_R1         MEAS CH  {T} 
+C_C2         0 RESET2  1.4427n  
+C_C1         0 MEAS  1.4427n  
+E_ABM2         RESET 0 VALUE { if(V(CH)<0.5,1,0)    }
+.MODEL         S1 VSWITCH Roff=1e9 Ron=1.0 Voff=0.25V Von=0.75V
+.ENDS ONE_SHOT_1
+*$
+.SUBCKT OR A B OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 | V(B)>0.5,1,0) }
+.ends OR
+*$
+.SUBCKT OR3 A B C OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 | V(B)>0.5 | V(C)>0.5,1,0) }
+.ends OR3
+*$
+.SUBCKT OR4 A B C D OUT  
+EOUT OUT 0 VALUE { IF( V(A)>0.5 | V(B)>0.5 | V(C)>0.5 | V(D)>0.5,1,0) }
+.ends OR4
+*$
+.SUBCKT PROPDELAY IN OUT
++ PARAMs:  TON=50 TOFF=100
+E_ABM3         BUFOFF 0 VALUE { if( V(DELAYON)>0.5,1,0)     }
+S_SON     BUFON DELAYON BUFON 0 SON 
+C_C2         0 DELAYOFF  1.4427n  
+E_ABM1         BUFON 0 VALUE { if( V(IN)>0.5,1,0)    }
+S_SOFF    BUFOFF DELAYOFF BUFOFF 0 SOFF 
+E_ABM4         OUT 0 VALUE { if( V(DELAYOFF)>0.5,1,0)     }
+C_C1         0 DELAYON  1.4427n  
+.MODEL         SON VSWITCH Roff=0.01 Ron={TON} Voff=0.25V Von=0.75V
+.MODEL         SOFF VSWITCH Roff={TOFF} Ron=0.01 Voff=0.25V Von=0.75V
+.ENDS PROPDELAY
+*$
+.SUBCKT RSFF_BASSO R S Q Q1
+*
+* Not Recommended
+*
+E_ABM1       P0  0  VALUE { IF( ((V(R) > 0.5) | (V(Q1)>0.5)), 0, 1)    }
+R_R1         P0  P  50 
+C_C1         P   0  100p IC=0 
+E_ABM3       Q   0  VALUE { IF( (V(P)>0.65), 1, 0)    }
+R_R3         Q   0  1k 
+E_ABM2       P01 0  VALUE { IF( ((V(Q) > 0.5) | (V(S)>0.5)), 0, 1)    }
+R_R2         P01 P1 50   
+C_C2         P1  0  100p IC=1 
+E_ABM4       Q1  0  VALUE { IF( (V(P1)>0.65), 1, 0)    }
+R_R4         Q1  0  1k 
+.ENDS RSFF_BASSO
+*$
+.SUBCKT RSFF_RDOM R S Q
+EABM1  1 0 VALUE { If( V(S)>0.5 | V(Q)>0.5, 1,0)    }
+EABM2  Q  0 VALUE { If( V(2)>0.5 & V(R)<0.5, 1,0)    }
+R1   1 2 1
+C1   2  0 5n
+.ENDS RSFF_RDOM
+*$
+.SUBCKT RSFF_RDOM_VAR R S Q PARAMs:  T=10
+EABM1  1 0 VALUE { If( V(S)>0.5 | V(Q)>0.5, 1,0)    }
+EABM2  Q  0 VALUE { If( V(2)>0.5 & V(R)<0.5, 1,0)    }
+R1   1 2 1
+C1   2  0 {T*1e-9}
+.ENDS RSFF_RDOM_VAR
+*$
+.SUBCKT RSFF_RDOM2 R S Q QB
+EABM1  1 0 VALUE { If( V(S)>0.5 | V(Q)>0.5, 1,0)    }
+EABM2  Q  0 VALUE { If( V(2)>0.5 & V(R)<0.5, 1,0)    }
+EABM3  QB  0 VALUE { If( V(Q)<0.5, 1,0)    }
+R1   1 2 1
+C1   2  0 5n
+.ENDS RSFF_RDOM2
+*$
+.SUBCKT RSFF_RDOM3  R S Q QB
+E_BQB 10 0 VALUE = { IF ( (V(R)<0.5) & (V(Q)>0.5), 0, 1 ) }
+E_BQ  20 0 VALUE = { IF ( ( (V(S)<0.5) | (V(R)>0.5) ) & (V(QB)>0.5), 0,1 ) }
+RD1   10 QB 1
+CD1   QB 0 1n IC=1
+RD2   20 Q 1
+CD2   Q 0 1n IC=0
+.ENDS RSFF_RDOM3
+*$
+.SUBCKT XOR A B OUT  
+EOUT OUT 0 VALUE { IF( (V(A)>0.5 & V(B)<0.5) | (V(A)<0.5 & V(B)>0.5),1,0) }
+.ends XOR
+*$
+.SUBCKT XNOR A B OUT  
+EOUT OUT 0 VALUE { IF( (V(A)>0.5 & V(B)<0.5) | (V(A)<0.5 & V(B)>0.5),0,1) }
+.ends XNOR
+*$
+.SUBCKT TRFF_RDOM T R Q
+EOUT2 S1 0 VALUE { IF( V(T1)>0.5 & V(Q)<0.5,1,0) }
+C2         T2 0  100p  
+R2         T3 T2  1  
+EOUT3 R2 0 VALUE { IF( V(T1)>0.5 & V(Q)>0.5,1,0) }
+EOUT6 T3 0 VALUE { IF( V(T)>0.5,1,0) }
+EABM1  1 0 VALUE { If( V(S1)>0.5 | V(QP)>0.5, 1,0)    }
+EABM2  QP  0 VALUE { If( V(1)>0.5 & V(R1)<0.5, 1,0)    }
+R1   QP Q 1
+C1   Q  0 1N
+EOUT4 R1 0 VALUE { IF( V(R2)>0.5 | V(R)>0.5,1,0) }
+EOUT5 T1 0 VALUE { IF( V(T3)>0.5 & V(T2)<0.5,1,0) }
+.ends TRFF_RDOM
+*$
+********************************************************************************
+* Analog Parts                                                                 *
+*                                                                              *
+********************************************************************************
+.SUBCKT ANALOG_BUFFER IN OUT  
++ PARAMs:  GAIN=1
+EOUT OUT 0 VALUE { GAIN * V(IN)}
+.ends ANALOG_BUFFER
+*$
+.SUBCKT ANALOG_DIFF IN1 IN2 OUT  
+EOUT OUT 0 VALUE { V(IN1)-V(IN2)}
+.ends ANALOG_DIFF
+*$
+.SUBCKT ANALOG_DIVIDER IN1 IN2 OUT  
+EOUT OUT 0 VALUE { V(IN1)/V(IN2)}
+.ends ANALOG_DIVIDER
+*$
+.SUBCKT ANALOG_MULTI IN1 IN2 OUT  
+EOUT OUT 0 VALUE { V(IN1)*V(IN2)}
+.ends ANALOG_MULTI
+*$
+.SUBCKT ANALOG_MUX A B SEL OUT  
+EOUT OUT 0 VALUE { IF( V(SEL)>0.5,V(B),V(A)) }
+.ends ANALOG_MUX
+*$
+.SUBCKT ANALOG_SUMMER IN1 IN2 OUT  
+EOUT OUT 0 VALUE { V(IN1)+V(IN2)}
+.ends ANALOG_SUMMER
+*$
+.SUBCKT CESR IN OUT
++ PARAMs:  C=100u ESR=0.01 X=2 IC=0
+C	IN 1  {C*X} IC={IC}
+RESR	1 OUT {ESR/X}
+.ENDS CESR
+*$
+.SUBCKT COMPARATOR INP INM OUT  
+EOUT OUT 0 VALUE { IF( V(INP)>V(INM),1,0) }
+.ends COMPARATOR
+*$
+.SUBCKT COMPARATOR2 INP OUT  
++ PARAMs:  TH=1
+EOUT OUT 0 VALUE { IF( V(INP)>TH,1,0) }
+.ends COMPARATOR2
+*$
+.SUBCKT COMPARATOR2_1 INP OUT  
++ PARAMs:  TH=1
+EOUT OUT 0 VALUE { IF( V(INP)>TH,0,1) }
+.ends COMPARATOR2_1
+*$
+.SUBCKT COMP_HYS INP INM HYS OUT PARAMs: T=10
+EIN INP1 INM1 INP INM 1 
+EHYS INP1 INP2 VALUE { IF( V(1)>0.5,-V(HYS)/2,V(HYS)/2) }
+EOUT OUT 0 VALUE { IF( V(INP2)>V(INM1),1,0) }
+R1 OUT 1 1
+C1 1 0 {T*1e-9}
+RINP1 INP1 0 1K
+.ends COMP_HYS
+*$
+.SUBCKT COMP_HYS2 INP OUT 
++ PARAMs:  TH=1 HYS=0.1 T=10
+EIN INP1 0 INP 0 1 
+EHYS INP1 INP2 VALUE { IF( V(1)>0.5,-(HYS)/2,HYS/2) }
+EOUT OUT 0 VALUE { IF( V(INP2)>TH,1,0) }
+R1 OUT 1 1
+C1 1 0 {T*1e-9}
+RINP1 INP1 0 1K
+.ends COMP_HYS2
+*$
+.SUBCKT COMP_HYS2_1 INP OUT 
++ PARAMs:  TH=1 HYS=0.1 T=10
+EIN INP1 0 INP 0 1 
+EHYS INP1 INP2 VALUE { IF( V(1)>0.5,(HYS)/2,-(HYS)/2) }
+EOUT OUT 0 VALUE { IF( V(INP2)<TH,1,0) }
+R1 OUT 1 1
+C1 1 0 {T*1e-9}
+RINP1 INP1 0 1K
+.ends COMP_HYS2_1
+*$
+.subckt DC_1mV_1mA_1V_1nA A C
+G1 A C TABLE { V(A, C) } ( (-1,-1n)(0,0)(1m,1m) (2m,100m) (3m,10) )
+.ends DC_1mV_1mA_1V_1nA 
+*$
+.subckt DC_1mV_1A_1V_1nA A C
+G1 A C TABLE { V(A, C) } ( (-1,-1n)(0,0)(1m,1) (2m,10) (3m,1000) )
+.ends DC_1mV_1A_1V_1nA 
+*$
+.subckt DCLAMP A C
++ PARAMS:  IS=1E-9 VT=6
+G1 A C VALUE = {IS*(EXP(V(A,C)*VT)-1)}
+*G1 A C A C {IS*(EXP(6)-1)}
+.ends DCLAMP 
+*$
+.SUBCKT DRIVER IN VCC OUT PGND   
++ PARAMS:  RSOURCE=2 RSINK=0.5 ISINK=2 ISOURCE=1
+R_RLSINK         0 5  {1/ISINK}  
+S_SSINK    1 PGND IN 0 SSINKM 
+F_FCM         0 3 VF_FCM 1
+VF_FCM         1 2 0V
+R_RLOAD         0 OUT  1Meg  
+S_SSRC    VCC 1 IN 0 SSRCM
+E_ELIM         2 OUT TABLE { V(3, 0) } 
++ ( (-1.1,-20)(-1,-1m)(0,0)(1,1m)(1.1,20) )
+R_RLSRC         0 4  {1/ISOURCE}  
+G_G1         3 4 TABLE { V(3, 4) } 
++ ( (-20,-1u)(0,0)(1m,10)(2m,100) )
+G_G2         3 5 TABLE { V(3, 5) } 
++ ((-2m,-100) (-1m,-10)(0,0)(20,1u) )
+D1 PGND 1 Dbreak
+D2 1 VCC Dbreak
+.MODEL         SSINKM VSWITCH Roff={RSINK} Ron=1Meg Voff=0.25 Von=0.75
+.MODEL         SSRCM VSWITCH Roff=1Meg Ron={RSOURCE} Voff=0.25 Von=0.75
+.ends DRIVER
+*$
+.SUBCKT DRIVEFET IN RTN SW VIN 
++ PARAMS:  TH=2.5 RH=0.001 RL=0.001
+D2         RTN SW FETBD 
+D1         SW VIN FETBD 
+EABM1         DR 0 VALUE { if(V(IN)>TH,1,-1)    }
+S1    VIN SW DR 0 SH 
+S2    SW RTN 0 DR  SL 
+.MODEL         SH VSWITCH Roff=1e6 Ron={RH} Voff=0.25V Von=0.75V
+.MODEL         SL VSWITCH Roff=1e6 Ron={RL} Voff=0.25V Von=0.75V
+.model FETBD  D(Is=100p Rs=1m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=0
++               M=.1593 Vj=.75 Fc=.5 Isr=40n Nr=2 Tt=0)
+.ends DRIVEFET
+*$
+.SUBCKT DRIVEFET2 IN RTN SW VIN 
++ PARAMS:  THU=4 THL=1 RH=0.001 RL=0.001
+D2         RTN SW FETBD 
+D1         SW VIN FETBD 
+EABM1         DRU 0 VALUE { if(V(IN)>THU,1,0)    }
+EABM2         DRL 0 VALUE { if(V(IN)<THL,1,0)    }
+S1    VIN SW DRU 0 SH 
+S2    SW RTN DRL 0 SL 
+.MODEL         SH VSWITCH Roff=1e6 Ron={RH} Voff=0.25V Von=0.75V
+.MODEL         SL VSWITCH Roff=1e6 Ron={RL} Voff=0.25V Von=0.75V
+.model FETBD  D(Is=100p Rs=1m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=0
++               M=.1593 Vj=.75 Fc=.5 Isr=40n Nr=2 Tt=0)
+.ends DRIVEFET2
+*$
+.SUBCKT DRIVEFET3 IN FAULT RTN SW VIN 
++ PARAMS:  TH=2.5 RH=0.001 RL=0.001
+D2         RTN SW FETBD 
+D1         SW VIN FETBD 
+EABM1         DRU 0 VALUE { if( (V(IN)>TH) & (V(FAULT)<TH),1,0)    }
+EABM2         DRL 0 VALUE { if( (V(IN)<TH) & (V(FAULT)<TH),1,0)    }
+S1    VIN SW DRU 0 SH 
+S2    SW RTN DRL 0  SL 
+.MODEL         SH VSWITCH Roff=1e6 Ron={RH} Voff=0.25V Von=0.75V
+.MODEL         SL VSWITCH Roff=1e6 Ron={RL} Voff=0.25V Von=0.75V
+.model FETBD  D(Is=100p Rs=1m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=0
++               M=.1593 Vj=.75 Fc=.5 Isr=40n Nr=2 Tt=0)
+.ends DRIVEFET3
+*$
+.subckt GEN_DIODE 1 2 
+D1 1 2 DI2D
+.model DI2D D Is=1e-14 Cjo=.1pF Rs=.1
+.ends GEN_DIODE
+*$
+.subckt GEN_ZENER 1 2 PARAMS: VZ=12 IZ=0.01 RD=10
+D1 1 2 DZ2D
+.model DZ2D D Is=1e-14 Cjo=.1pF Rs={RD} BV={VZ-(IZ*RD)}
+.ends GEN_ZENER
+*$
+.SUBCKT ILIMIT IN OUT PARAMs:  IP=1 IM=1 VHARD=10
+EATAN      2 0 VALUE {ATAN(V(1))}
+GABM1      IN OUT VALUE { if(V(2)>0,IP*V(2)/1.5708,IM*V(2)/1.5708)    }
+E1         1 0 IN OUT {VHARD}
+.ends ILIMIT
+*$
+.SUBCKT LDCR IN OUT
++ PARAMs:  L=1u DCR=0.01 IC=0
+L	IN 1  {L} IC={IC}
+RDCR	1 OUT {DCR}
+.ENDS LDCR
+*$
+.SUBCKT LOAD P M
++ PARAMs:  TDELAY=1u TRISE=1u TFALL=1u TPULSE=1u TWIDTH=1 ISTART=1 IPULSE=2 RLOAD=1Meg
+ILOAD P M PULSE({ISTART} {IPULSE} {TDELAY} {TRISE} {TFALL} {TPULSE} {TWIDTH} )
+RLOAD P M {RLOAD}
+GLOAD M P TABLE { V(M, P) } ( (-1,-1n)(0,0)(1m,1) (2m,10) (3m,1000) )
+.ENDS LOAD
+*$
+.SUBCKT OP_AMP P M OUT 
++ PARAMs:  Hlimit=5 Rin=10Meg BW=18Meg DC_Gain=100 Rout=100 Llimit=0 SRP=1 SRM=1
+R_Rin         P M  {Rin}
+E_E1          5 0 M P {-Gain}
+E_LIMIT2      6 0 VALUE {LIMIT(V(5), {-Abs(SRM)*Ca*1Meg+V(1)/Ra},
++                 {SRP*Ca*1Meg+V(1)/Ra})}
+G_G2          1 0 6 0 -1
+R_Ra          0 1  {Ra} 
+C_Ca          0 1  {Ca}   
+E_LIMIT1      2 0 VALUE {LIMIT(V(1),{Llimit},{Hlimit})}
+V_VL          3 0 {Llimit+200m}
+V_VH          4 0 {Hlimit-200m}
+D_D1          3 1 Dideal 
+D_D2          1 4 Dideal 
+R_Rout        OUT 2  {Rout}
+.model Dideal D Is=1e-10 Cjo=.01pF Rs=1m  N=1
+.PARAM  Ra=1k   Ca={exp(DC_gain*log(10)/20)/(2*3.14159*BW*Ra)} 
++ Gain={exp(DC_gain*log(10)/20)/Ra} 
+.ENDS OP_AMP
+*$
+.SUBCKT OPTO A K C E PARAMS: CTR=1 F=10E3 IC_ILED=0.001
+DLED         A   1 D1 
+VLED         K   1 0
+FLED         3   0 VLED 1
+RF           3   0 1
+CF           3   0 {1/6.28/F} IC={IC_ILED}
+GOUT         C   E 3 0 {CTR}   
+ROUT         C   E 1E6
+GCLAMP E C1 TABLE { V(E, C1) } ( (-1,-1n)(0,0)(1m,1) (2m,10) (3m,1000) )
+VOFF   C C1  0.01
+.model D1 D Is=1e-10 Cjo=.01pF Rs=100m  N=1
+.ends OPTO
+*$
+.SUBCKT OSC FAULT RAMP CLK PARAMS:  FREQ=100E3 TCLK=1E-6
+VCLK         CLK2 0 PULSE 0 1 {TON} 1n 1n {TCLK} {1/FREQ}
+S1    RAMP 0 2 0 S1M 
+EOUT1         2 0 VALUE { if( V(FAULT)>0.5 | V(CLK)>0.5,1,0)    }
+EOUT2         CLK 0 VALUE { if( V(FAULT)<0.5,V(CLK2),0)    }
+ICH         0 RAMP DC {ICHARGE}  
+COSC         0 RAMP  1n IC=0
+.PARAM  ICHARGE={1E-9/TON} RON={TCLK/100/1E-9} TON={(1/FREQ)-TCLK} 
+.MODEL         S1M VSWITCH Roff=1G Ron=1m Voff=0.25 Von=0.75 
+.ENDS OSC
+*$
+.SUBCKT OSC_DUAL FAULT RAMP1 CLK1 RAMP2 CLK2 PARAMS:  FREQ=100E3 TCLK=1E-6
+VCLK1         CLK1A 0 PULSE 0 1 {TON} 1n 1n {TCLK} {1/FREQ}
+S1    RAMP1 0 1A 0 S1M 
+EOUT1A         1A 0 VALUE { if( V(FAULT)>0.5 | V(CLK1)>0.5,1,0)    }
+EOUT1B         CLK1 0 VALUE { if( V(FAULT)<0.5,V(CLK1A),0)    }
+ICH1         0 RAMP1 DC {ICHARGE}  
+COSC1         0 RAMP1  1n IC=0
+VCLK2         CLK2A 0 PULSE 0 1 {TON2} 1n 1n {TCLK} {1/FREQ}
+S2    RAMP2 0 2A 0 S2M 
+EOUT2A         2A 0 VALUE { if( V(FAULT)>0.5 | V(CLK2)>0.5,1,0)    }
+EOUT2B        CLK2 0 VALUE { if( V(FAULT)<0.5,V(CLK2A),0)    }
+ICH2         0 RAMP2 DC {ICHARGE}  
+COSC2         0 RAMP2  1n IC=0
+.PARAM  ICHARGE={1E-9/TON} RON={TCLK/100/1E-9} TON={(1/FREQ)-TCLK} TON2={TON/2}
+.MODEL         S1M VSWITCH Roff=1G Ron=1m Voff=0.25 Von=0.75 
+.MODEL         S2M VSWITCH Roff=1G Ron=1m Voff=0.25 Von=0.75 
+.ENDS OSC_DUAL
+*$
+.SUBCKT OSC_1 FAULT RAMP CLK PARAMS:  FREQ=100E3 TCLK=1E-6
+GDIS         RAMP 0 CLK 0 {IGAIN}
+ECLK         CLK 0 VALUE { if(V(2)>0.5,1,0)    }
+EHYSC         1 0 VALUE { if(V(CLK)>0.5,-0.5,0.5)    }
+S1         RAMP 0 FAULT 0 S1M
+EHYS         RAMP 2 1 0 1
+ICH         0 RAMP DC {ICHARGE}  
+COSC         0 RAMP  1n IC=0
+.PARAM  ICHARGE={1E-9/TON} IGAIN={(1E-9/TCLK)+ICHARGE} TON=
++ {(1/FREQ)-TCLK} 
+.MODEL         S1M VSWITCH Roff=1G Ron=1m Voff=0.25 Von=0.75
+.ENDS OSC_1
+*$
+.SUBCKT PWM_SW IN1 IN2 OUT1 OUT2 VC
+H_H1         3 0 VH_H1 1
+VH_H1         2 OUT1 0V
+E1         2 OUT2 1 0 1
+EOUT1         1 0 VALUE { (V(IN1)-V(IN2))*V(VC)    }
+GOUT1         IN1 IN2 VALUE { V(3) *V(VC)    }
+.ENDS PWM_SW
+*$
+.SUBCKT XFOR_1P1S P1A P1B S1A S1B PARAMS: NP1=10 NS1=1 RP1=0.001 RS1=0.001 
++ LLEAK=100E-9 LM=0.01 RCORE=100e3 
+R_R3         P1B 2  {RCORE}  
+L_L1         P1A 1  {LLEAK}  
+R_R1         1 2  {RP1}  
+L_L2         P1B 2  {LM} IC=0 
+E_E1         3 S1B 2 P1B {NS1/NP1}
+R_R2         3 4  {RS1}  
+F_F1         2 P1B VF_F1 {NS1/NP1}
+VF_F1         4 S1A 0V
+.ends XFOR_1P1S
+*$
+.SUBCKT XFOR_1P2S P1A P1B S1A S1B S2A S2B PARAMS: NP1=10 NS1=1 NS2=1 RP1=0.001 
++ RS1=0.001 RS2=0.001 LLEAK=100E-9 LM=0.01 RCORE=100e3 
+R_R3         P1B 2  {RCORE}  
+L_L1         P1A 1  {LLEAK}  
+R_R1         1 2  {RP1}  
+L_L2         P1B 2  {LM} IC=0 
+E_E1         3 S1B 2 P1B {NS1/NP1}
+R_R2         3 4  {RS1}  
+F_F1         2 P1B VF_F1 {NS1/NP1}
+VF_F1         4 S1A 0V
+E_E2         6 S2B 2 P1B {NS2/NP1}
+R_R4         6 7  {RS2}  
+F_F2         2 P1B VF_F2 {NS2/NP1}
+VF_F2         7 S2A 0V
+.ends XFOR_1P2S
+*$
+.SUBCKT XFOR_CS P1A P1B S1A S1B PARAMS: N=100 
+F_F1         S1A S1B VF_F1 {1/N}
+VF_F1        P1B P1A 0V
+.ends XFOR_CS
+*$
+.SUBCKT XFOR_GATE_1P2S P1A P1B S1A S1B S2A S2B PARAMS: NP1=1 NS1=1 NS2=1 
++ LM=0.01 RCORE=100e3
+R_R1	     P1A 1  0.001 
+R_R3         P1B 1  {RCORE}  
+L_L2         P1B 1  {LM} IC=0 
+E_E1         S1A S1B P1A P1B {NS1/NP1}
+E_E2         S2A S2B P1A P1B {NS2/NP1}
+.ends XFOR_GATE_1P2S
+*$

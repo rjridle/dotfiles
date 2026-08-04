@@ -1,0 +1,107 @@
+(footprint "9_MDSUB_ANGLE"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "CONN D-SUB PLUG 9POS R/A SOLDER")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "cd8a64cc-69cd-4b7a-94e0-2d8bea02adfa")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "9_MDSUB_ANGLE"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "535b2890-a602-4d01-94d1-82bc17080e33")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/documentation/datasheet/inputoutput/io_dsub_brochure.pdf"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "eff3d83e-8c43-42b9-8f00-4d6de173b589")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "9 Position D-Sub Plug, Male Pins Connector"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "68cd2475-21a4-45f0-90d6-61fcbb295c26")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "Amphenol ICC (FCI)"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "53cd2fce-89b3-4d99-8816-7c29cdd060d7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Man. Part Num" "DEM09P500"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "eaf1d4de-3126-474f-b0ee-e30e17cc5eb2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "URL" "https://www.digikey.com/en/products/detail/amphenol-cs-fci/DEM09P500/1537362"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "651ac814-8fb2-4f73-8e5a-8f55476d8db7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "8a566f81-314d-4eee-848e-92cfc56f1ab6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(embedded_fonts no)
+)
