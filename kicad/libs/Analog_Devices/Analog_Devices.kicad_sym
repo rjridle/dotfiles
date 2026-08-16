@@ -1336,7 +1336,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin input line
 				(at 2.54 6.35 270)
 				(length 3.81)
 				(name "V+"
@@ -1354,7 +1354,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin input line
 				(at 2.54 -6.35 90)
 				(length 3.81)
 				(name "V-"
@@ -1373,8 +1373,8 @@
 				)
 			)
 			(pin no_connect line
-				(at 5.08 0 0)
-				(length 2.54)
+				(at 3.81 0 90)
+				(length 1.27)
 				(hide yes)
 				(name "NC"
 					(effects
@@ -1392,8 +1392,8 @@
 				)
 			)
 			(pin no_connect line
-				(at 5.08 0 0)
-				(length 2.54)
+				(at 5.08 0 90)
+				(length 1.27)
 				(hide yes)
 				(name "NC"
 					(effects
@@ -1411,8 +1411,8 @@
 				)
 			)
 			(pin no_connect line
-				(at 5.08 0 0)
-				(length 2.54)
+				(at 6.35 0 90)
+				(length 1.27)
 				(hide yes)
 				(name "NC"
 					(effects

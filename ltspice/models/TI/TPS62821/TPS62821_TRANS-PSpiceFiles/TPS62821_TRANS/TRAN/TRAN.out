@@ -1,0 +1,573 @@
+
+**** 11/14/17 22:37:20 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "TPS62821_TRANS-TRAN"  [ c:\elabmodel_ws\elab_model_ds\part_numbers\tps62821\release_ti\pspice\tps62821_pspice_trans\tps
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "TRAN.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../tps62821_trans.lib" 
+* From [PSPICE NETLIST] section of C:\Users\a0132446\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+
+*Analysis directives: 
+.TRAN  0 4m 0 10n 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) 
+.INC "..\TPS62821_TRANS.net" 
+
+
+
+**** INCLUDING TPS62821_TRANS.net ****
+* source TPS62821_TRANS
+R_RLoad         VOUT 0  {1.8/10m}  
+R_RESR         N16677541 VOUT  1.05m  
+C_C1         VIN 0  4.7u IC=0 
+L_LESL         N16677541 N14591482  500p  
+R_R3         PG VOUT  100k  
+R_R2         0 FB  100k  
+R_R1         FB VOUT  200k  
+V_VIN         VIN 0  
++PWL 0 0 1u 3.6 1.3m 3.6 
+C_C3         VOUT FB  120p  
+X_U2         VIN VIN PG 0 FB SW 0 0 TPS62821_TRANS PARAMS: SS=0 CL=2.2
+C_C2         N14591482 0  10u  
+L_L1         SW VOUT  470n  
+X_S1    N16679931 0 VOUT 0 TPS62821_TRANS_S1 
+V_V2         N16679931 0  
++PULSE 0 1 1.2m 10n 10n 1.3m 1
+.PARAM  ss=0 cl=2.2
+
+.subckt TPS62821_TRANS_S1 1 2 3 4  
+S_S1         3 4 1 2 _S1
+RS_S1         1 2 1G
+.MODEL         _S1 VSWITCH Roff=1e6 Ron=0.72 Voff=0.2 Von=0.8
+.ends TPS62821_TRANS_S1
+
+**** RESUMING TRAN.cir ****
+.END
+
+INFO(ORPSIM-15423): Unable to find index file tps62821_trans.ind for library file tps62821_trans.lib.
+
+INFO(ORPSIM-15422): Making new index file tps62821_trans.ind for library file tps62821_trans.lib.
+
+Index has 81 entries from 1 file(s).
+
+**** 11/14/17 22:37:20 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "TPS62821_TRANS-TRAN"  [ c:\elabmodel_ws\elab_model_ds\part_numbers\tps62821\release_ti\pspice\tps62821_pspice_trans\tps
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_S1._S1        
+         RON     .72         
+        ROFF    1.000000E+06 
+         VON     .8          
+        VOFF     .2          
+
+
+**** 11/14/17 22:37:20 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "TPS62821_TRANS-TRAN"  [ c:\elabmodel_ws\elab_model_ds\part_numbers\tps62821\release_ti\pspice\tps62821_pspice_trans\tps
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   FB)    0.0000  (   PG)    0.0000  (   SW)    0.0000  (  VIN)    0.0000      
+
+( VOUT)    0.0000  (X_U2.LS)    0.0000                   (N14591482)    0.0000  
+
+(N16677541)    0.0000                 (N16679931)    0.0000                     
+
+(X_U2.P100)    0.0000                 (X_U2.SDWN)    1.0000                     
+
+(X_U2.HS_ON)    0.0000                (X_U2.LS_ON)    0.0000                    
+
+(X_U2.PAUSE)    1.0000                (X_U2.SS_TR) 4.802E-15                    
+
+(X_U2.CAPRIO)    0.0000               (X_U2.HICCUP)-14.53E-24                   
+
+(X_U2.N20512)    1.0000               (X_U2.SDWN_N)    0.0000                   
+
+(X_U2.U_FAST)    0.0000               (X_U2.U_SLOW)    0.0000                   
+
+(X_U2.U_VERR) 3.169E-24               (X_U2.FB_COMP)    1.0000                  
+
+(X_U2.MIN_TON)    0.0000              (X_U2.N351928)    0.0000                  
+
+(X_U2.N351938) 88.69E-27              (X_U2.RUNAWAY)    1.0000                  
+
+(X_U2.VOUT_EQ)    0.0000              (X_U2.DRVH_PRE)    0.0000                 
+
+(X_U2.DRVL_PRE)    0.0000             (X_U2.EN_LOGIC)    0.0000                 
+
+(X_U2.INT_VREF) 2.881E-15             (X_U2.MIN_TOFF)    0.0000                 
+
+(X_U2.U13_DRVH)    0.0000             (X_U2.U13_DRVL)    0.0000                 
+
+(X_U2.UVLO_OUT)    0.0000             (X_U2.U_FB_FLT)    0.0000                 
+
+(X_U2.U_N00126) 3.169E-24             (X_U2.U_N00201) 3.169E-24                 
+
+(X_U2.U_N02097)    0.0000             (X_U2.U_N03309) 3.169E-24                 
+
+(X_U2.U_N04173) 3.169E-24             (X_U2.U_N06466)     .6000                 
+
+(X_U2.U_V0P577) 2.743E-15             (X_U2.U_V_0P63) 3.025E-15                 
+
+(X_U2.CLIMIT_HS)    0.0000            (X_U2.ISENSE_HS)    0.0000                
+
+(X_U2.ISENSE_LS)    0.0000            (X_U2.SMALL_FSW)    1.0000                
+
+(X_U2.U2_N10820)    0.0000            (X_U2.U2_N12733)    1.0000                
+
+(X_U2.U2_N13275)    1.0000            (X_U2.U2_N13957)    0.0000                
+
+(X_U2.U_AC_FAST)     .6000            (X_U2.U_AC_SLOW)     .6000                
+
+(X_U2.X_U8.YINT)    1.0000            (X_U2.PWM_NEW_HS)    0.0000               
+
+(X_U2.PWR_G_OUT2)    0.0000           (X_U2.U2_N351837)     .0400               
+
+(X_U2.U2_N352334)    0.0000           (X_U2.U2_N353395)    0.0000               
+
+(X_U2.U2_N353755)    0.0000           (X_U2.X_U26.YINT)    0.0000               
+
+(X_U2.PWM_NEW_LS1)    0.0000          (X_U2.PWM_NEW_LS2)    0.0000              
+
+(X_U2.U2_N3515931)    0.0000          (X_U2.U2_N3516351)    0.0000              
+
+(X_U2.U2_N3516751)    0.0000          (X_U2.U2_N3517151)    0.0000              
+
+(X_U2.U_N16779079) 3.169E-24          (X_U2.U_N16779175)    0.0000              
+
+(X_U2.U_N16780066)    1.0000          (X_U2.X_U_U1.Yint)    1.0000              
+
+(X_U2.X_U_U2.YINT)    1.0000          (X_U2.PWR_G_N00497)    0.0000             
+
+(X_U2.X_U2_U3.YINT)    0.0000         (X_U2.X_U2_U9.Yint)    1.0000             
+
+(X_U2.Caprio_N15145)    0.0000        (X_U2.Caprio_N23722)     .0150            
+
+(X_U2.Caprio_N34511)    0.0000        (X_U2.Caprio_N34543)    0.0000            
+
+(X_U2.Caprio_N34587)    1.0000        (X_U2.Enable_N03743)    2.3000            
+
+(X_U2.Enable_N06376)    0.0000        (X_U2.Enable_N06443)    0.0000            
+
+(X_U2.Enable_N56049)    1.0000        (X_U2.INCREASE_TOFF)    1.0000            
+
+(X_U2.PWM_NEW_RESET)    1.0000        (X_U2.PWM_NEW_RZ_HS)    0.0000            
+
+(X_U2.PWM_NEW_RZ_LS)    0.0000        (X_U2.PWM_NEW_SZ_HS)    1.0000            
+
+(X_U2.PWM_NEW_SZ_LS)    1.0000        (X_U2.PWR_G_N216712)    0.0000            
+
+(X_U2.PWR_G_N221839)    0.0000        (X_U2.PWR_G_N222172)     .5760            
+
+(X_U2.PWR_G_N222282)     .5760        (X_U2.PWR_G_N222445)     .5760            
+
+(X_U2.PWR_G_N225619)    1.0000        (X_U2.PWR_G_N230586)     .5760            
+
+(X_U2.PWR_G_N230669)    0.0000        (X_U2.PWR_G_N234798)    0.0000            
+
+(X_U2.PWR_G_N234806)    1.0000        (X_U2.PWR_G_N234821)    0.0000            
+
+(X_U2.PWR_G_N234856)    0.0000        (X_U2.PWR_G_N234900)     .6300            
+
+(X_U2.U13_N16766531)    0.0000        (X_U2.U13_N16766543)    0.0000            
+
+(X_U2.U13_N16768053)    0.0000        (X_U2.U13_N16810781)    0.0000            
+
+(X_U2.U13_N16812330)    1.0000        (X_U2.U13_N16812362)    1.0000            
+
+(X_U2.U13_N16812551)    0.0000        (X_U2.U13_N16814911)    1.0000            
+
+(X_U2.U13_N16815087)    1.0000        (X_U2.X_U2_U11.YINT)    1.0000            
+
+(X_U2.X_U2_U12.YINT)    0.0000        (X_U2.PWM_NEW_RESETZ)    0.0000           
+
+(X_U2.SoftStart_SDWN)    1.0000       (X_U2.U13_DRVH_PRE_N)    1.0000           
+
+(X_U2.U13_DRVL_PRE_N)    1.0000       (X_U2.PWR_G_N16773777) 1.441E-15          
+
+(X_U2.X_PWR_G_U12.MY5)    1.0000      (X_U2.X_PWR_G_U12.Qbr)    1.0000          
+
+(X_U2.X_PWR_G_U12.Qqq) 2.002E-15      (X_U2.X_PWR_G_U5.Yint)    0.0000          
+
+(X_U2.X_PWR_G_U9.YINT)    0.0000      (X_U2.X_U13_U11.YINT1)    0.0000          
+
+(X_U2.X_U13_U11.YINT2)    0.0000      (X_U2.X_U13_U11.YINT3)    0.0000          
+
+(X_U2.X_U13_U12.YINT1)    0.0000      (X_U2.X_U13_U12.YINT2)    0.0000          
+
+(X_U2.X_U13_U12.YINT3)    0.0000      (X_U2.X_U13_U610.YINT)    1.0000          
+
+(X_U2.X_U13_U616.YINT)    1.0000      (X_U2.X_U13_U617.YINT)    0.0000          
+
+(X_U2.X_U13_U618.YINT)    0.0000      (X_U2.X_U13_U621.YINT)    1.0000          
+
+(X_U2.X_U13_U623.YINT)    1.0000      (X_U2.Enable_N14548793)    0.0000         
+
+(X_U2.Enable_N14550394)    2.3000     (X_U2.PWM_NEW_RZ_PAUSE)    1.0000         
+
+(X_U2.PWM_NEW_SZ_PAUSE)    0.0000     (X_U2.X_Caprio_U14.MY5)    1.0000         
+
+(X_U2.X_Caprio_U14.Qbr)    1.0000     (X_U2.X_Caprio_U14.Qqq) 2.002E-15         
+
+(X_U2.X_Enable_U5.Yint)    0.0000     (X_U2.X_PWR_G_U10.YINT)    1.0000         
+
+(X_U2.X_PWR_G_U11.Yint)    0.0000     (X_U2.X_PWR_G_U12.Qint) 2.002E-15         
+
+(X_U2.X_PWR_G_U13.YINT)    0.0000     (X_U2.X_PWR_G_U14.Yint)    1.0000         
+
+(X_U2.X_U13_U624.YINT1)    1.0000     (X_U2.X_U13_U624.YINT2)    1.0000         
+
+(X_U2.X_U13_U624.YINT3)    1.0000     (X_U2.X_U13_U625.YINT1)    1.0000         
+
+(X_U2.X_U13_U625.YINT2)    1.0000     (X_U2.X_U13_U625.YINT3)    1.0000         
+
+(X_U2.PWM_NEW_N14656252)    0.0000    (X_U2.PWM_NEW_N14656338)    1.0000        
+
+(X_U2.PWM_NEW_N14656344)    0.0000    (X_U2.PWM_NEW_N14656414)    0.0000        
+
+(X_U2.PWM_NEW_N14656430)    0.0000    (X_U2.PWM_NEW_N14656444)    1.0000        
+
+(X_U2.PWM_NEW_N14656506)    0.0000    (X_U2.PWM_NEW_N14656548)    1.0000        
+
+(X_U2.PWM_NEW_N14656554)    0.0000    (X_U2.PWM_NEW_N14656650)    1.0000        
+
+(X_U2.PWM_NEW_N14656664)    0.0000    (X_U2.PWM_NEW_N14656686)    0.0000        
+
+(X_U2.PWM_NEW_N14656804)    0.0000    (X_U2.PWM_NEW_N14656810)    1.0000        
+
+(X_U2.PWM_NEW_N14656854)    0.0000    (X_U2.PWM_NEW_N14656918)    1.0000        
+
+(X_U2.PWM_NEW_N14657084)    1.0000    (X_U2.PWM_NEW_N14657560)    1.0000        
+
+(X_U2.PWM_NEW_N14657690)    1.0000    (X_U2.PWM_NEW_N14657728)    1.0000        
+
+(X_U2.PWM_NEW_N14657734)    0.0000    (X_U2.PWM_NEW_N14657740)    0.0000        
+
+(X_U2.PWM_NEW_N14657746)    0.0000    (X_U2.PWM_NEW_N14657752)    1.0000        
+
+(X_U2.PWM_NEW_N14657758)    0.0000    (X_U2.PWM_NEW_N14657764)    0.0000        
+
+(X_U2.PWM_NEW_N14657770)    0.0000    (X_U2.PWM_NEW_N14657776)    1.0000        
+
+(X_U2.PWM_NEW_N14657842)    1.0000    (X_U2.SoftStart_N220347)    0.0000        
+
+(X_U2.SoftStart_N220353)    0.0000    (X_U2.SoftStart_N221204)    1.2000        
+
+(X_U2.SoftStart_N222011) 2.881E-15    (X_U2.SoftStart_N234157)    1.0000        
+
+(X_U2.X_Caprio_U12.Yint)    1.0000    (X_U2.X_Caprio_U13.YINT)    0.0000        
+
+(X_U2.X_Caprio_U14.Qint) 2.002E-15    (X_U2.X_Caprio_U16.YINT)    0.0000        
+
+(X_U2.X_Enable_U10.YINT)    1.0000    (X_U2.X_Enable_U11.YINT)    0.0000        
+
+(X_U2.X_PWM_NEW_U1.YINT)    0.0000    (X_U2.X_PWM_NEW_U3.YINT)    1.0000        
+
+(X_U2.X_PWM_NEW_U40.MY5)    1.0000    (X_U2.X_PWM_NEW_U40.Qbr)    1.0000        
+
+(X_U2.X_PWM_NEW_U40.Qqq) 2.002E-15    (X_U2.X_PWM_NEW_U41.MY5)    1.0000        
+
+(X_U2.X_PWM_NEW_U41.Qbr)    1.0000    (X_U2.X_PWM_NEW_U41.Qqq) 2.002E-15        
+
+(X_U2.X_PWM_NEW_U42.MY5)    1.0000    (X_U2.X_PWM_NEW_U42.Qbr)    1.0000        
+
+(X_U2.X_PWM_NEW_U42.Qqq) 2.002E-15    (X_U2.X_PWM_NEW_U5.YINT)    0.0000        
+
+(X_U2.X_PWM_NEW_U6.YINT)    0.0000    (X_U2.X_PWM_NEW_U9.YINT)    1.0000        
+
+(X_U2.X_PWR_G_U12.MYVSS)    0.0000    (X_U2.X_PWR_G_U12.Qqqd1)    0.0000        
+
+(X_U2.Min_Toff_N16777504)    1.0000   (X_U2.Min_Toff_N16777530)    1.8000       
+
+(X_U2.Min_Toff_N16777542)     .5000   (X_U2.Min_Toff_N16777917) 1.134E-06       
+
+(X_U2.Min_Toff_N16777948)    1.0000   (X_U2.Min_Toff_N16806413)    0.0000       
+
+(X_U2.Min_Toff_N16806698)     .0578   (X_U2.Min_Toff_N16807393) 1.134E-06       
+
+(X_U2.Min_Toff_N16807486) 1.134E-06   (X_U2.Min_Toff_N16807919)    1.0000       
+
+(X_U2.PWM_NEW_ILIM_LATC2)    0.0000   (X_U2.PWM_NEW_N146576020)    1.0000       
+
+(X_U2.X_Caprio_U14.MYVSS)    0.0000   (X_U2.X_Caprio_U14.Qqqd1)    0.0000       
+
+(X_U2.X_Min_Toff_U8.YINT)    0.0000   (X_U2.X_Min_Toff_U9.Yint)    1.0000       
+
+(X_U2.X_PWM_NEW_U10.YINT)    1.0000   (X_U2.X_PWM_NEW_U11.YINT)    0.0000       
+
+(X_U2.X_PWM_NEW_U12.YINT)    1.0000   (X_U2.X_PWM_NEW_U13.YINT)    1.0000       
+
+(X_U2.X_PWM_NEW_U14.YINT)    0.0000   (X_U2.X_PWM_NEW_U15.YINT)    0.0000       
+
+(X_U2.X_PWM_NEW_U16.YINT)    1.0000   (X_U2.X_PWM_NEW_U17.YINT)    1.0000       
+
+(X_U2.X_PWM_NEW_U18.YINT)    1.0000   (X_U2.X_PWM_NEW_U19.YINT)    0.0000       
+
+(X_U2.X_PWM_NEW_U20.YINT)    1.0000   (X_U2.X_PWM_NEW_U23.YINT)    1.0000       
+
+(X_U2.X_PWM_NEW_U24.YINT)    0.0000   (X_U2.X_PWM_NEW_U25.YINT)    0.0000       
+
+(X_U2.X_PWM_NEW_U26.YINT)    0.0000   (X_U2.X_PWM_NEW_U27.YINT)    0.0000       
+
+(X_U2.X_PWM_NEW_U28.YINT)    1.0000   (X_U2.X_PWM_NEW_U29.YINT)    1.0000       
+
+(X_U2.X_PWM_NEW_U30.YINT)    0.0000   (X_U2.X_PWM_NEW_U31.YINT)    0.0000       
+
+(X_U2.X_PWM_NEW_U32.YINT)    0.0000   (X_U2.X_PWM_NEW_U33.YINT)    1.0000       
+
+(X_U2.X_PWM_NEW_U34.YINT)    0.0000   (X_U2.X_PWM_NEW_U35.YINT)    1.0000       
+
+(X_U2.X_PWM_NEW_U36.YINT)    1.0000   (X_U2.X_PWM_NEW_U37.YINT)    0.0000       
+
+(X_U2.X_PWM_NEW_U40.Qint) 2.002E-15   (X_U2.X_PWM_NEW_U41.Qint) 2.002E-15       
+
+(X_U2.X_PWM_NEW_U42.Qint) 2.002E-15   (X_U2.Min_Toff_N168072780)    1.0000      
+
+(X_U2.PWM_NEW_ILIM_LATCH1)    0.0000  (X_U2.X_Curr_Limit_U613.P)    0.0000      
+
+(X_U2.X_Curr_Limit_U618.P)    0.0000  (X_U2.X_Curr_Limit_U626.P)    0.0000      
+
+(X_U2.X_Min_Toff_U11.YINT)    1.0000  (X_U2.X_PWM_NEW_U40.MYVSS)    0.0000      
+
+(X_U2.X_PWM_NEW_U40.Qqqd1)    0.0000  (X_U2.X_PWM_NEW_U41.MYVSS)    0.0000      
+
+(X_U2.X_PWM_NEW_U41.Qqqd1)    0.0000  (X_U2.X_PWM_NEW_U42.MYVSS)    0.0000      
+
+(X_U2.X_PWM_NEW_U42.Qqqd1)    0.0000  (X_U2.X_PWM_NEW_U624.YINT)    1.0000      
+
+(X_U2.X_PWM_NEW_U626.YINT)    1.0000  (X_U2.X_PWM_NEW_U627.YINT)    0.0000      
+
+(X_U2.X_PWM_NEW_U628.YINT)    1.0000  (X_U2.X_PWM_NEW_U629.YINT)    0.0000      
+
+(X_U2.X_PWM_NEW_U630.YINT)    1.0000  (X_U2.X_PWM_NEW_U631.YINT)    0.0000      
+
+(X_U2.X_PWR_G_U12.X3.YINT)    0.0000  (X_U2.X_SoftStart_U9.YINT)    1.0000      
+
+(X_U2.Curr_Limit_N16774450)-7.267E-24 (X_U2.Curr_Limit_N16774792) 66.00E-15     
+
+(X_U2.Curr_Limit_N16774804)   31.5000 (X_U2.Curr_Limit_N16774858)   33.0000     
+
+(X_U2.Curr_Limit_N16774898)    0.0000 (X_U2.Curr_Limit_N16774934)    1.0000     
+
+(X_U2.Curr_Limit_N16803181)    0.0000 (X_U2.Curr_Limit_N16803282) 10.00E-15     
+
+(X_U2.Curr_Limit_N16803299)    1.5000 (X_U2.Curr_Limit_N16803326)    5.0000     
+
+(X_U2.Curr_Limit_N16803342)    0.0000 (X_U2.Curr_Limit_N16803351)    0.0000     
+
+(X_U2.Curr_Limit_N16803354)    1.0000 (X_U2.Curr_Limit_N16805640) 14.53E-27     
+
+(X_U2.Curr_Limit_N16807543)    0.0000 (X_U2.Curr_Limit_N16849411)    0.0000     
+
+(X_U2.Curr_Limit_N16849417) 464.1E-27 (X_U2.Curr_Limit_N16849425)    0.0000     
+
+(X_U2.Curr_Limit_N16868343)    2.2000 (X_U2.Curr_Limit_N16882685)    1.0000     
+
+(X_U2.Curr_Limit_N16882718)    0.0000 (X_U2.Curr_Limit_N16882725)    1.0000     
+
+(X_U2.X_Caprio_U14.X3.YINT)    0.0000 (X_U2.X_Curr_Limit_U23.MY5)    1.0000     
+
+(X_U2.X_Curr_Limit_U23.Qbr)    1.0000 (X_U2.X_Curr_Limit_U23.Qqq) 2.002E-15     
+
+(X_U2.X_Curr_Limit_U3.Yint)    0.0000 (X_U2.X_Curr_Limit_U4.YINT)    0.0000     
+
+(X_U2.X_Curr_Limit_U613.Q1)    0.0000 (X_U2.X_Curr_Limit_U613.YA) 666.7E-18     
+
+(X_U2.X_Curr_Limit_U618.Q1)    0.0000 (X_U2.X_Curr_Limit_U618.YA) 666.7E-18     
+
+(X_U2.X_Curr_Limit_U626.Q1)    0.0000 (X_U2.X_Curr_Limit_U626.YA) 666.7E-18     
+
+(X_U2.X_Min_Toff_U623.YINT)    0.0000 (X_U2.X_Min_Toff_U624.YINT)    1.0000     
+
+(X_U2.X_Min_Toff_U625.YINT)    1.0000 (X_U2.X_PWM_NEW_U40.CLKdel)    1.0000     
+
+(X_U2.X_PWM_NEW_U40.CLKint)    0.0000 (X_U2.X_PWM_NEW_U41.CLKdel)    1.0000     
+
+(X_U2.X_PWM_NEW_U41.CLKint)    0.0000 (X_U2.X_PWM_NEW_U42.CLKdel)    1.0000     
+
+(X_U2.X_PWM_NEW_U42.CLKint)    0.0000 (X_U2.X_SoftStart_U10.YINT)    1.0000     
+
+(X_U2.Curr_Limit_RS_8_CYCLE)    0.0000                                          
+
+(X_U2.PWM_NEW_BLOCK_HSILIMZ)    1.0000                                          
+
+(X_U2.X_Curr_Limit_U13.YINT)    0.0000                                          
+
+(X_U2.X_Curr_Limit_U23.Qint) 2.002E-15                                          
+
+(X_U2.X_Curr_Limit_U613.Qn1)    1.0000                                          
+
+(X_U2.X_Curr_Limit_U613.YTD)    0.0000                                          
+
+(X_U2.X_Curr_Limit_U618.Qn1)    1.0000                                          
+
+(X_U2.X_Curr_Limit_U618.YTD)    0.0000                                          
+
+(X_U2.X_Curr_Limit_U626.Qn1)    1.0000                                          
+
+(X_U2.X_Curr_Limit_U626.YTD)    0.0000                                          
+
+(X_U2.X_PWM_NEW_U40.X2.YINT)    0.0000                                          
+
+(X_U2.X_PWM_NEW_U41.X2.YINT)    0.0000                                          
+
+(X_U2.X_PWM_NEW_U42.X2.YINT)    0.0000                                          
+
+(X_U2.Curr_Limit_MIN_TOFF_CL)    0.0000                                         
+
+(X_U2.PWM_NEW_GATE_LSZ_DELAY)    1.0000                                         
+
+(X_U2.PWM_NEW_ILIM_LATCH_PRE)    0.0000                                         
+
+(X_U2.X_Curr_Limit_U23.MYVSS)    0.0000                                         
+
+(X_U2.X_Curr_Limit_U23.Qqqd1)    0.0000                                         
+
+(X_U2.X_Curr_Limit_U612.Yint)    0.0000                                         
+
+(X_U2.X_Curr_Limit_U613.VSUP)    1.0000                                         
+
+(X_U2.X_Curr_Limit_U618.VSUP)    1.0000                                         
+
+(X_U2.X_Curr_Limit_U619.Yint)    0.0000                                         
+
+(X_U2.X_Curr_Limit_U622.YINT)    0.0000                                         
+
+(X_U2.X_Curr_Limit_U625.YINT)    0.0000                                         
+
+(X_U2.X_Curr_Limit_U626.VSUP)    1.0000                                         
+
+(X_U2.X_PWM_NEW_U40.X1.YINT1)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U40.X1.YINT2)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U40.X1.YINT3)    1.0000                                         
+
+(X_U2.X_PWM_NEW_U40.X3.YINT1)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U40.X3.YINT2)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U40.X3.YINT3)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U41.X1.YINT1)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U41.X1.YINT2)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U41.X1.YINT3)    1.0000                                         
+
+(X_U2.X_PWM_NEW_U41.X3.YINT1)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U41.X3.YINT2)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U41.X3.YINT3)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U42.X1.YINT1)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U42.X1.YINT2)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U42.X1.YINT3)    1.0000                                         
+
+(X_U2.X_PWM_NEW_U42.X3.YINT1)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U42.X3.YINT2)    0.0000                                         
+
+(X_U2.X_PWM_NEW_U42.X3.YINT3)    0.0000                                         
+
+(X_U2.Curr_Limit_HICCUP_RESET)    0.0000                                        
+
+(X_U2.X_Curr_Limit_U23.X3.YINT)    0.0000                                       
+
+(X_U2.PWM_NEW_HS_TURN_ON_ALLOWED)    1.0000              
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_VIN        0.000E+00
+    V_V2         0.000E+00
+    X_U2.V_Min_Toff_V5  -1.134E-06
+    X_U2.V_Min_Toff_V4   0.000E+00
+    X_U2.V_V1   -2.002E-09
+    X_U2.V_Curr_Limit_V4   0.000E+00
+    X_U2.V_Curr_Limit_V10   0.000E+00
+    X_U2.V_Curr_Limit_V3  -3.300E-11
+    X_U2.V_Curr_Limit_V8  -5.001E-12
+    X_U2.V_Curr_Limit_V9   0.000E+00
+    X_U2.V_Caprio_V1   0.000E+00
+    X_U2.V_PWM_NEW_V1   0.000E+00
+    X_U2.V_U_V1   0.000E+00
+    X_U2.V_SoftStart_V1  -2.401E-12
+    X_U2.X_PWR_G_U12.V1  -1.001E-12
+    X_U2.X_PWR_G_U12.V2   2.776E-27
+    X_U2.X_U13_H1.VH_U13_H1   0.000E+00
+    X_U2.X_U13_H2.VH_U13_H2   0.000E+00
+    X_U2.X_Curr_Limit_U613.VS  -1.000E-12
+    X_U2.X_Curr_Limit_U626.VS  -1.000E-12
+    X_U2.X_Curr_Limit_U23.V1  -1.001E-12
+    X_U2.X_Curr_Limit_U23.V2   2.776E-27
+    X_U2.X_Curr_Limit_U618.VS  -1.000E-12
+    X_U2.X_Caprio_U14.V1  -1.001E-12
+    X_U2.X_Caprio_U14.V2   2.776E-27
+    X_U2.X_PWM_NEW_U41.V1  -1.001E-12
+    X_U2.X_PWM_NEW_U41.V2   2.776E-27
+    X_U2.X_PWM_NEW_U42.V1  -1.001E-12
+    X_U2.X_PWM_NEW_U42.V2   2.776E-27
+    X_U2.X_PWM_NEW_U40.V1  -1.001E-12
+    X_U2.X_PWM_NEW_U40.V2   2.776E-27
+
+    TOTAL POWER DISSIPATION   2.04E-06  WATTS
+
+Reducing minimum delta to make the circuit converge.
+
+
+          JOB CONCLUDED
+
+**** 11/14/17 22:37:20 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "TPS62821_TRANS-TRAN"  [ c:\elabmodel_ws\elab_model_ds\part_numbers\tps62821\release_ti\pspice\tps62821_pspice_trans\tps
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .94
+  Total job time (using Solver 1)   =      803.94
+

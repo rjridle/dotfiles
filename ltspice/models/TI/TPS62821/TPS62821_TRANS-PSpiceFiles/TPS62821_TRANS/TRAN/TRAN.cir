@@ -1,0 +1,19 @@
+** Profile: "TPS62821_TRANS-TRAN"  [ c:\elabmodel_ws\elab_model_ds\part_numbers\tps62821\release_ti\pspice\tps62821_pspice_trans\tps62821_trans-pspicefiles\tps62821_trans\tran.sim ] 
+
+** Creating circuit file "TRAN.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../tps62821_trans.lib" 
+* From [PSPICE NETLIST] section of C:\Users\a0132446\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+
+*Analysis directives: 
+.TRAN  0 4m 0 10n 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) 
+.INC "..\TPS62821_TRANS.net" 
+
+
+.END

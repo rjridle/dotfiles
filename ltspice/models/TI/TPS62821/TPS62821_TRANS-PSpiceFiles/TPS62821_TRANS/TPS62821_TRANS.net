@@ -1,0 +1,24 @@
+* source TPS62821_TRANS
+R_RLoad         VOUT 0  {1.8/10m}  
+R_RESR         N16677541 VOUT  1.05m  
+C_C1         VIN 0  4.7u IC=0 
+L_LESL         N16677541 N14591482  500p  
+R_R3         PG VOUT  100k  
+R_R2         0 FB  100k  
+R_R1         FB VOUT  200k  
+V_VIN         VIN 0  
++PWL 0 0 1u 3.6 1.3m 3.6 
+C_C3         VOUT FB  120p  
+X_U2         VIN VIN PG 0 FB SW 0 0 TPS62821_TRANS PARAMS: SS=0 CL=2.2
+C_C2         N14591482 0  10u  
+L_L1         SW VOUT  470n  
+X_S1    N16679931 0 VOUT 0 TPS62821_TRANS_S1 
+V_V2         N16679931 0  
++PULSE 0 1 1.2m 10n 10n 1.3m 1
+.PARAM  ss=0 cl=2.2
+
+.subckt TPS62821_TRANS_S1 1 2 3 4  
+S_S1         3 4 1 2 _S1
+RS_S1         1 2 1G
+.MODEL         _S1 VSWITCH Roff=1e6 Ron=0.72 Voff=0.2 Von=0.8
+.ends TPS62821_TRANS_S1

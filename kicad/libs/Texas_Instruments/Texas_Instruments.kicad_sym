@@ -6702,7 +6702,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "INA28x"
+	(symbol "INA28x-Q1"
 		(pin_names
 			(offset 0)
 		)
@@ -6718,7 +6718,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Value" "INA28x"
+		(property "Value" "INA28x-Q1"
 			(at -6.096 14.478 0)
 			(effects
 				(font
@@ -6755,15 +6755,6 @@
 				(hide yes)
 			)
 		)
-		(property "Package" "8-SOIC"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Manufacturer" "Texas Instruments"
 			(at 0 0 0)
 			(effects
@@ -6773,25 +6764,7 @@
 				(hide yes)
 			)
 		)
-		(property "Man. Part Num" ""
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Distributor" "Digi-Key"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Dist. Part Num" ""
+		(property "Man. Part Num" "INA28x-Q1"
 			(at 0 0 0)
 			(effects
 				(font
@@ -6809,7 +6782,7 @@
 				(hide yes)
 			)
 		)
-		(property "Notes" ""
+		(property "Package" "8-SOIC"
 			(at 0 0 0)
 			(effects
 				(font
@@ -6818,7 +6791,7 @@
 				(hide yes)
 			)
 		)
-		(symbol "INA28x_0_0"
+		(symbol "INA28x-Q1_0_0"
 			(pin input line
 				(at -5.08 10.16 0)
 				(length 5.08)
@@ -6946,7 +6919,7 @@
 				)
 			)
 		)
-		(symbol "INA28x_1_1"
+		(symbol "INA28x-Q1_1_1"
 			(rectangle
 				(start 0 12.7)
 				(end 12.7 0)
@@ -7098,15 +7071,6 @@
 			)
 		)
 		(property "ki_keywords" "LM337IMPX/NOPB"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "ki_fp_filters" "MP04A_TEX MP04A_TEX-M MP04A_TEX-L"
 			(at 0 0 0)
 			(effects
 				(font
@@ -18455,24 +18419,6 @@
 				(hide yes)
 			)
 		)
-		(property "Distributor" "Digi-Key"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Dist. Part Num" "296-6920-1-ND"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "Part Type" "SMD"
 			(at 0 0 0)
 			(effects
@@ -18491,25 +18437,7 @@
 				(hide yes)
 			)
 		)
-		(property "Notes" ""
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(property "ki_keywords" "SN65LVDS2DBVR"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "ki_fp_filters" "DBV5 DBV5-M DBV5-L"
 			(at 0 0 0)
 			(effects
 				(font
@@ -18674,7 +18602,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Texas Instruments:SN65LVDS33PWR_16TSSOP"
+		(property "Footprint" "Texas_Instruments:SN65LVDS33PWR_16TSSOP"
 			(at 0 0 0)
 			(effects
 				(font

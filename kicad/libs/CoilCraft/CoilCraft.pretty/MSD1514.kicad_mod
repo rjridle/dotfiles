@@ -4,7 +4,7 @@
 	(generator_version "9.0")
 	(layer "F.Cu")
 	(descr "Common Mode Choke")
-	(tags "MSD1514 Coilcraft")
+	(tags "MSD1514 COILCRAFT COMMON MODE CHOKE")
 	(property "Reference" "REF**"
 		(at 0 -8.3 0)
 		(unlocked yes)

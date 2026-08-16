@@ -1,0 +1,361 @@
+(footprint "1SMB5915BT3G"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Zener Diode 3.9 V 3 W ±5% Surface Mount SMB")
+	(tags "1SMB5915BT3G")
+	(property "Reference" "REF**"
+		(at 0 -3 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "58a05a17-d4f4-4cb2-9e9e-9c79e0ed45d6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "1SMB5915BT3G"
+		(at 0 5.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "a6614527-f2fc-483c-bd74-4c57458788e1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/1smb5913bt3-d.pdf"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5106be3e-296d-4300-aa29-7b1697e7c34d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Zener Diode 3.9 V 3 W ±5% Surface Mount SMB"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "48c36718-97a1-4cc9-a923-33a5995a394f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "onsemi"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "52ae42ad-8699-4c15-ab99-e7e93f3cb59f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Man. Part Num" "1SMB5915BT3G"
+		(at 0 3.6 0)
+		(layer "F.Fab")
+		(uuid "120193c4-d80c-4aae-816d-9a44cada0faa")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Forward Voltage" "1.5V @ 200mA"
+		(at 0 3.6 0)
+		(layer "F.Fab")
+		(uuid "028bbcc0-428d-4e3c-bea9-c12c6acf9520")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Zener Voltage" "3.9V"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "b41ccedc-dd79-4d2a-b9e4-9ec63bf96e8d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Type" "SMD"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "e716513f-78d4-46c6-8ed0-537ed2b01ecd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Package" "DO-214AA, SMB"
+		(at 0 3.6 0)
+		(layer "F.Fab")
+		(uuid "cf636eb5-d4c4-4acd-be80-e70a0f89e04c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -0.55 -1)
+		(end -0.55 1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "6bd28fb7-7c54-4880-bc3f-25119ebd98aa")
+	)
+	(fp_line
+		(start -0.55 0)
+		(end -0.95 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "8bafff5f-bc78-406a-87d4-78f912b597ab")
+	)
+	(fp_line
+		(start 0.55 -0.7)
+		(end 0.55 0.7)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "8658c59f-4827-473d-a2b4-c2d3e81129d3")
+	)
+	(fp_line
+		(start 0.55 -0.7)
+		(end 0.8 -0.9)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "ece12056-7e9d-4d89-aa6d-8b5be8ed396d")
+	)
+	(fp_line
+		(start 0.55 0)
+		(end -0.55 -1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "948063b2-4a75-4e31-aec8-44a4be1c22ba")
+	)
+	(fp_line
+		(start 0.55 0)
+		(end -0.55 1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "649bd514-6155-44fb-b27a-764f87282602")
+	)
+	(fp_line
+		(start 0.55 0)
+		(end 0.95 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "79b60b79-0e49-4a24-8497-8b2adce05e77")
+	)
+	(fp_line
+		(start 0.55 0.7)
+		(end 0.3 0.9)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "7b5a8d84-b43b-41ac-93bd-197bddd32568")
+	)
+	(fp_rect
+		(start -2.16 -1.78)
+		(end 2.16 1.78)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "038a3e12-bcfd-4d8b-81de-9be70065033e")
+	)
+	(fp_line
+		(start -3.4 -1.5)
+		(end -3.4 1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "b4f0e0d9-0bef-45dd-abf9-536a4ebfeff7")
+	)
+	(fp_line
+		(start -3.4 1.5)
+		(end -2.3 1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "2fffa5a2-6ce7-4942-8d92-6b37cf422cb9")
+	)
+	(fp_line
+		(start -2.3 -1.9)
+		(end -2.3 -1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "b35320f2-f5da-4597-a8f9-3aa470ac8873")
+	)
+	(fp_line
+		(start -2.3 -1.5)
+		(end -3.4 -1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "737cb3bc-b990-40a6-877f-adbe542598be")
+	)
+	(fp_line
+		(start -2.3 1.5)
+		(end -2.3 1.9)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "4294f228-6144-4aa9-9859-ac6f0f3c87f1")
+	)
+	(fp_line
+		(start -2.3 1.9)
+		(end 2.3 1.9)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "79fd18a5-a0c1-4d76-ac76-2fc658a7aebc")
+	)
+	(fp_line
+		(start 2.3 -1.9)
+		(end -2.3 -1.9)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "ee04a974-b5ce-47ca-95d4-3fc359eea6c5")
+	)
+	(fp_line
+		(start 2.3 -1.5)
+		(end 2.3 -1.9)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "23b3ef10-7507-4c42-b8b0-06a6cbae0d33")
+	)
+	(fp_line
+		(start 2.3 1.5)
+		(end 3.4 1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "1ca38cfc-4356-46ff-9457-62c9e65c47cc")
+	)
+	(fp_line
+		(start 2.3 1.9)
+		(end 2.3 1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "fe711319-fc66-477f-a92a-b0d7708372f4")
+	)
+	(fp_line
+		(start 3.4 -1.5)
+		(end 2.3 -1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "0d5e6bf2-0e4d-44a7-beeb-491e2d073cc7")
+	)
+	(fp_line
+		(start 3.4 1.5)
+		(end 3.4 -1.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "1d980e02-92f4-4324-be6a-fc7f29feb6cd")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 7 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "9d772d6b-c9fb-4ec1-9f44-6e30f9958409")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -2.21 0)
+		(size 2.159 2.743)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "301a1b2c-8d26-48c6-992f-ff325ab0141e")
+	)
+	(pad "2" smd rect
+		(at 2.21 0)
+		(size 2.159 2.743)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "edc11b5e-fcde-41a5-81ae-e106f64960bb")
+	)
+	(embedded_fonts no)
+)
